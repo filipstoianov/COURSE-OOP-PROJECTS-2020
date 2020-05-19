@@ -2,7 +2,8 @@
 #include<iostream>
 #include<vector>
 #include<string>
-class User
+#include"book.h"
+class User : public Book
 {
 private:
 	std::string username;

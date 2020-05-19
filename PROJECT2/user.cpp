@@ -21,7 +21,12 @@ User::User(std::string name)
 
 User::~User()
 {
-	
+	this->username.clear();
+	this->access.clear();
+	this->password.clear();
+	names_client.clear();
+	names_administrator.clear();
+	all_users.clear();
 }
 void User::init(std::string s, std::string passw,std::string type)
 {

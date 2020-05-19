@@ -10,7 +10,23 @@ Book::Book()
 }
 Book::~Book()
 {
-
+	this->author.clear();
+	this->title.clear();
+	this->genre.clear();
+	this->description.clear();
+	this->year_published.clear();
+	this->key_words.clear();
+	this->rating.clear();
+	this->isbn.clear();
+	save.clear();
+	all_content.clear();
+	ibn.clear();
+	title_.clear();
+    author_.clear();
+	tag_.clear();
+	year_.clear();
+	rating_.clear();
+	all_.clear();
 }
 Book::Book(std::string s1, std::string s2, std::string s3, std::string s4, std::string s5, std::string s6, std::string s7, std::string s8)
 {
@@ -83,7 +99,7 @@ void Book::book_add(std::string filename,std::string s1, std::string s2, std::st
 	}
 	my_file.close();
 }
-void Book::sort_asc(std::vector < std::string> v)
+std::vector<std::string> Book::sort_asc(std::vector < std::string> v)
 {
 	std::string swap;
 	for (int i = 0; i < v.size()-1; i++)
@@ -93,13 +109,14 @@ void Book::sort_asc(std::vector < std::string> v)
 			if (v[i]>v[j])
 			{
 				swap = v[i];
-				v[i]= v[j];
+				v[i] = v[j];
 				v[j] = swap;
 			}
 		}
 	}
+	return v;
 }
-void Book::sort_desc(std::vector < std::string> v)
+std::vector<std::string> Book::sort_desc(std::vector < std::string> v)
 {
 	std::string swap;
 	for (int i = 0; i < v.size() - 1; i++)
@@ -114,6 +131,7 @@ void Book::sort_desc(std::vector < std::string> v)
 			}
 		}
 	}
+	return v;
 }
 void Book::remove_book(std::string filename, std::string title)
 {
@@ -161,50 +179,15 @@ void Book::print_all()
 }
 void Book::init_book(std::string s1, std::string s2, std::string s3, std::string s4, std::string s5, std::string s6, std::string s7, std::string s8)
 {
-	std::string s;
-	std::string st;
+
 	this->author = s1;
-	s += this->author;
-	s += '\n';
-	st += this->author;
-	st += '\n';
-	author_.push_back(this->author);
 	this->title = s2;
-	st += this->title;
-	st += '\n';
-	s += this->title;
-	s += '\n';
-	title_.push_back(this->title);
 	this->genre = s3;
-	st += this->genre;
-	st += '\n';
-	s += this->genre;
-	s += '\n';
 	this->description = s4;
-    st += this->description;
-	st += '\n';
 	this->year_published = s5;
-	st += this->year_published;
-	st += '\n';
-	year_.push_back(this->year_published);
 	this->key_words = s6;
-	st += this->key_words;
-	st += '\n';
-	tag_.push_back(key_words);
 	this->rating = s7;
-	st += this->rating;
-	st += '\n';
-	rating_.push_back(this->rating);
 	this->isbn = s8;
-	ibn.push_back(this->isbn);
-	st += this->isbn;
-	st += '\n';
-	s += this->isbn;
-	s += '\n';
-	all_content.push_back(st);
-	st.clear();
-	save.push_back(s);
-	s.clear();
 	
 
 }
@@ -323,38 +306,57 @@ void Book::books_find(std::string s1,std::string s2)
 
 void Book::books_sort(std::string s1,std::string s2)
 {
+	std::vector < std::string>changed;
 	if (s1=="asc" || s1=="\0")
 	{
 		if (s2 == "title")
 		{
-			sort_asc(all_content);
-			for (int i = 0; i < title_.size(); i++)
+			changed=sort_asc(title_);
+			for (int i = 0; i < changed.size(); i++)
 			{
-				std::cout << all_content[i] << std::endl; 
+				for (int j = 0; j < title_.size(); j++)
+				{
+					if (changed[i] == title_[j])
+					{
+						std::cout << all_content[j];
+					}
+				}
 			}
 		}
 		if (s2 == "author")
 		{
-			sort_asc(all_content);
-			for (int i = 0; i < author_.size(); i++)
+			changed=sort_asc(all_content);
+			for (int i = 0; i < changed.size(); i++)
 			{
-				std::cout << all_content[i] << std::endl;
+				std::cout << changed[i] << std::endl;
 			}
 		}
 		if (s2 == "year")
 		{
-			sort_asc(all_content);
-			for (int i = 0; i < year_.size(); i++)
+			changed=sort_asc(year_);
+			for (int i = 0; i < changed.size(); i++)
 			{
-				std::cout << all_content[i] << std::endl;
+				for (int j = 0; j < year_.size(); j++)
+				{
+					if (changed[i] == year_[j])
+					{
+						std::cout << all_content[j];
+					}
+				}
 			}
 		}
 		if (s2 == "rating")
 		{
-			sort_asc(all_content);
-			for (int i = 0; i <rating_.size(); i++)
+			changed=sort_asc(rating_);
+			for (int i = 0; i <changed.size(); i++)
 			{
-				std::cout << all_content[i] << std::endl;
+				for (int j = 0; j < rating_.size(); j++)
+				{
+					if (changed[i] == rating_[j])
+					{
+						std::cout << all_content[j];
+					}
+				}
 			}
 		}
 	}
@@ -362,35 +364,52 @@ void Book::books_sort(std::string s1,std::string s2)
 	{
 		if (s2 == "title")
 		{
-			sort_desc(all_content);
-			for (int i = 0; i < title_.size(); i++)
+			changed=sort_desc(title_);
+			for (int i = 0; i < changed.size(); i++)
 			{
-				std::cout << all_content[i] << std::endl; 
+				for (int j = 0; j < title_.size(); j++)
+				{
+					if (changed[i] == title_[j])
+					{
+						std::cout << all_content[j];
+					}
+				}
 			}
 		}
 		if (s2 == "author")
 		{
-			sort_desc(all_content);
-			sort_desc(all_content);
-			for (int i = 0; i < author_.size(); i++)
+			changed = sort_desc(all_content);
+			for (int i = 0; i < changed.size(); i++)
 			{
-				std::cout << all_content[i] << std::endl; 
+				std::cout << changed[i] << std::endl; 
 			}
 		}
 		if (s2 == "year")
 		{
-			sort_desc(all_content);
-			for (int i = 0; i < year_.size(); i++)
+			changed=sort_desc(year_);
+			for (int i = 0; i < changed.size(); i++)
 			{
-				std::cout << all_content[i] << std::endl; 
+				for (int j = 0; j < year_.size(); j++)
+				{
+					if (changed[i] == year_[j])
+					{
+						std::cout << all_content[j];
+					}
+				}
 			}
 		}
 		if (s2 == "rating")
 		{
-			sort_desc(all_content);
-			for (int i = 0; i < rating_.size(); i++)
+			changed=sort_desc(rating_);
+			for (int i = 0; i < changed.size(); i++)
 			{
-				std::cout << all_content[i] << std::endl; 
+				for (int j = 0; j < rating_.size(); j++)
+				{
+					if (changed[i] == rating_[j])
+					{
+						std::cout << all_content[j];
+					}
+				}
  			}
 		}
 	}

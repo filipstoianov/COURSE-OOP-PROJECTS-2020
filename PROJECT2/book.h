@@ -12,7 +12,7 @@ class Book
 	std::string rating;
 	std::string isbn;
 	std::vector<std::string>save;
-	std::vector<std::string>all_content;
+	std::vector <std::string>all_content;
 	std::vector<std::string>ibn;
 	std::vector<std::string>title_;
 	std::vector<std::string>author_;
@@ -32,8 +32,8 @@ public:
 	void books_find(std::string s1, std::string s2);
 	void books_sort(std::string s1, std::string s2);
 	void remove_book(std::string filename, std::string title);
-	void sort_asc(std::vector < std::string> v);
-	void sort_desc(std::vector < std::string> v);
+	std::vector<std::string> sort_asc(std::vector < std::string> v);
+	std::vector<std::string>sort_desc(std::vector < std::string> v);
 	void books_all();
 	void print_all();
 };
