@@ -93,83 +93,39 @@ void User::init_file(std::string filename)
 	 str1 += str2;
 	 str1 += " ";
 	 str1 += str3;
-	 std::string res = copy_file(filename);
-	 res += " ";
-	 res += str1;
+	 str1 += '\n';
+	 all_users.push_back(str1);
 	 file.open(filename,std::ios::out|std::ios::trunc);
-	 file.close();
-	 file.open(filename,std::ios::out|std::ios::app);
-	 if (file.is_open())
+	 
+	 for (int i = 0; i < all_users.size(); i++)
 	 {
-		 file <<res<< std::endl;
+		 file << all_users[i] << std::endl;
 	 }
 		 file.close();
 		 return;
  }
- std::string User:: copy_file(std::string filename)
- {
-	 std::fstream file;
-	 std::string name;
-	 std::string res;
-	 file.open(filename, std::ios::in);
-	 if (file.good())
-	 {
-		 while (getline(file, name,'\n'))
-		 {
-			 res += name;
-			 res += '\n';
-		 }
-	 }
-	 file.close();
-	 file.open(filename,std::ios::trunc);
-	 file.close();
-	 return res;
- }
+
  void User::remove_users(std::string filename, std::string name)
  {
-	 std::fstream file;
+	 std::fstream my_file;
 	 std::string res;
-	 file.open(filename, std::ios::in);
-	 res = copy_file(filename);
-	 file.close();
-	 std::string s;
-	 int start = 0;
-	 int finish = 0;
-	 int rps = 0;
-	 int i = 0;
-	 int k = 0;
-	 while(i<res.length())
+	 size_t found = 0;
+	 for (int i = 0; i < all_users.size(); i++)
 	 {
-		 if (res[i] == name[0])
+		 found = all_users[i].find(name);
+		 if (found != std::string::npos)
 		 {
-			 start = i;
-			 rps = 0;
-			 for (int t = start; t < start + name.length(); t++)
-			 {
-				 for (int j = 0; j < name.length(); j++)
-				 {
-					 if (res[i] == name[j])
-					 {
-						 rps++;
-					 }
-				 }
-			 }
-				 if (rps == name.length())
-				 {
-					 k = i;
-					 while (res[k] != '\n')
-					 {
-						 k++;
-					 }
-					 finish = k;
-					 res.erase(res.begin()+start, res.begin()+finish);
-				 }
+			 all_users.erase(all_users.begin() + i);
 		 }
-		 i++;
 	 }
-	 file.open(filename,std::ios::out|std::ios::trunc);
-	 file << res;
-	 file.close();
+	 my_file.open(filename, std::ios::out | std::ios::trunc);
+
+	 for (int i = 0; i < all_users.size(); i++)
+	 {
+		 my_file << all_users[i];
+	 }
+	 my_file.close();
+
  }
 
 void User::log_in(std::string s, std::string passw)

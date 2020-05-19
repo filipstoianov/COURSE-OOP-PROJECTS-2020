@@ -19,16 +19,21 @@ class Book
 	std::vector<std::string>tag_;
 	std::vector<std::string>year_;
 	std::vector<std::string>rating_;
-	
+	std::vector<std::string>all_;
 
 public:
 	Book();
 	~Book();
 	Book(std::string s1, std::string s2, std::string s3, std::string s4, std::string s5, std::string s6, std::string s7, std::string s8);
-	void book_add(std::string s1, std::string s2, std::string s3, std::string s4, std::string s5, std::string s6, std::string s7, std::string s8);
+	void book_add(std::string s, std::string s1, std::string s2, std::string s3, std::string s4, std::string s5, std::string s6, std::string s7, std::string s8);
 	void init_book(std::string s1, std::string s2, std::string s3, std::string s4, std::string s5, std::string s6, std::string s7, std::string s8);
 	void init_file_book(std::string filename);
 	void book_info(std::string ISBN);
 	void books_find(std::string s1, std::string s2);
 	void books_sort(std::string s1, std::string s2);
+	void remove_book(std::string filename, std::string title);
+	void sort_asc(std::vector < std::string> v);
+	void sort_desc(std::vector < std::string> v);
+	void books_all();
+	void print_all();
 };

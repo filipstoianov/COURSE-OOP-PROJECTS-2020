@@ -10,6 +10,7 @@ private:
 	std::string access;
 	std::vector <std::string> names_client;
 	std::vector <std::string> names_administrator;
+	std::vector<std::string>all_users;
 	int reps = 0;
 	bool enter_client = false;
 	bool enter_administrator = false;
@@ -26,7 +27,6 @@ public:
 	std::ofstream& output(std::fstream file,User u);
 	void add_users(std::string filename, std::string str1, std::string str2);
 	void remove_users(std::string filename, std::string str1);
-	std::string copy_file(std::string filename);
 	void print_clients(std::string filename);
 	void print_administrator();
 };

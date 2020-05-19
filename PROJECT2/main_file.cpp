@@ -22,16 +22,21 @@ int main()
 	n.add_users(filename, "Peter", "samolevski");
 	n.remove_users(filename, "Ivan");
 	n.remove_users(filename, "Simona");
-	//n.print_clients(filename);
+	n.add_users(filename, "Gerge", "12314");
 
 	
-	n.log_in("Dragan", "1asdada");
-	n.log_in("Maria", "19.02.2000");
-	n.log_in("Maria", "19.02.2000");
-	n.log_in("Maria", "19dad");
-	n.log_in("Maria", "19dad");
 
-
+	Book h;
+	std::fstream my_file;
+	std::string book_filename="Library.txt";
+	h.book_add(book_filename, "Filip", "Harry Potter", "fantasy", "This is the most interesting book in the world", "2020", "fantasy,magic,world", "7.00", "190");
+	h.book_add(book_filename, "Filip", "LOVE AND LIVE", "fantasy", "This is the most interesting book in the world", "2020", "fantasy,magic,world", "7.00", "117");
+	h.remove_book(book_filename,"Harry Potter");
+	h.book_add(book_filename, "Steven King", "Star Wars", "action", "This is an amazing book","2021" ,"stars,world", "7.00", "203");
+	h.print_all();
+	h.books_all();
+	h.book_info("203");
+	h.books_find("tag","");
 	
 
 
