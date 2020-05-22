@@ -93,19 +93,17 @@ void User::init_file(std::string filename)
  void User::add_users(std::string filename, std::string str1,std::string str2)
  {
 	 std::fstream file;
-	 std::string str3="client";
+	 std::string str3 = "client";
 	 str1 += " ";
 	 str1 += str2;
 	 str1 += " ";
 	 str1 += str3;
 	 str1 += '\n';
 	 all_users.push_back(str1);
-	 file.open(filename,std::ios::out|std::ios::trunc);
-	 
-	 for (int i = 0; i < all_users.size(); i++)
-	 {
-		 file << all_users[i] << std::endl;
-	 }
+	 file.open(filename,std::ios::out|std::ios::app);
+	 file << std::endl;
+	
+		 file << all_users[all_users.size()-1] << std::endl;
 		 file.close();
 		 return;
  }
@@ -123,7 +121,7 @@ void User::init_file(std::string filename)
 			 all_users.erase(all_users.begin() + i);
 		 }
 	 }
-	 my_file.open(filename, std::ios::out | std::ios::trunc);
+	 my_file.open(filename, std::ios::out);
 
 	 for (int i = 0; i < all_users.size(); i++)
 	 {

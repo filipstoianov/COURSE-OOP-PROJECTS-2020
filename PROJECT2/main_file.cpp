@@ -50,52 +50,7 @@ char* separate_string1(std::string str1)
 	new_buffer[new_length] = '\0';
 	return new_buffer;
 }
-char* separate_arg1(std::string str1)
-{
-	size_t len = str1.length();
-	char* new_buffer = (char*)(malloc(sizeof(char)));
-	size_t ind = 0;
-	size_t new_length = 0;
-	for (size_t i = 0; i < len; ++i)
-	{
-		if (str1[i] == 'R')
-		{
-			new_length = i;
-			break;
-		}
-	}
-	new_buffer = new char[new_length];
-	for (size_t j = 0; j < new_length; ++j)
-	{
-		new_buffer[ind] = str1[j];
-		ind++;
-	}
-	new_buffer[new_length] = '\0';
-	return new_buffer;
-}
-char* separate_arg2(std::string str1)
-{
-	size_t len = str1.length();
-	char* new_buffer = (char*)(malloc(sizeof(char)));
-	size_t ind = 0;
-	size_t new_length = 0;
-	for (size_t i = 0; i < len; ++i)
-	{
-		if (str1[i] == 'R')
-		{
-			new_length = i;
-			break;
-		}
-	}
-	new_buffer = new char[len - new_length];
-	for (size_t j = new_length; j < len; ++j)
-	{
-		new_buffer[ind] = str1[j];
-		ind++;
-	}
-	new_buffer[len - new_length] = '\0';
-	return new_buffer;
-}
+
 
 
 int main()
@@ -123,7 +78,16 @@ int main()
 	char* word1 = (char*)(malloc(sizeof(char)));
 	char* word2 = (char*)(malloc(sizeof(char)));
 	char* word3 = (char*)(malloc(sizeof(char)));
-	char* name = (char*)(malloc(sizeof(char)));
+	std::string s1;
+	std::string s2;
+	std::string s3;
+	std::string s4;
+	std::string s5;
+	std::string s6;
+	std::string s7;
+	std::string s8;
+
+	std::string filename;
 	while (true)
 	{
 		std::getline(std::cin, str);
@@ -136,12 +100,14 @@ int main()
 			{
 				file_new.open(word2, std::ios::out);
 				std::cout << "Succesfully created new file with the same name!" << std::endl;
+				filename = word2;
 
 			}
 			else
 			{
-				n.init_file(word2);
-				std::cout << "Succesfully opened!";
+				n.init_file_book(word2);
+				std::cout << "Succesfully opened!" << std::endl;
+				filename = word2;
 
 			}
 
@@ -151,11 +117,12 @@ int main()
 
 			file.close();
 			std::cout << "Successfully closed" << std::endl;
+			filename.clear();
 		}
 		if (strcmp(word1, command3) == 0)
 		{
 			file.close();
-			file.open(word2, std::ios::out | std::ios::trunc);
+			file.open(word2, std::ios::out | std::ios::app);
 			std::string s;
 			for (int i = 0; i < s.length(); i++)
 			{
@@ -195,13 +162,13 @@ int main()
 			break;
 
 		}
-		if (strcmp(word1, command7) == 0 && word2=='\0')
+		if (strcmp(word1, command7) == 0 )
 		{
-			std::cout << "Enter username:";
-			std::cin >> word2;
-			std::cout << "Enter password:";
-			std::cin >> word3;
+			word2 = separate_string1(word2);
+			word3 = separate_string2(word2);
+			n.init_file("Users.txt");
 			n.log_in(word2,word3);
+			std::cout << "This command is being done succesfully" << std::endl;
 		}
 		if (strcmp(word1, command8) == 0)
 		{
@@ -210,29 +177,31 @@ int main()
 		}
 		if (strcmp(word1, command9) == 0)
 		{
-			n.books_all();
+			n.print_all(filename);
 			std::cout << "This command is being done succesfully." << std::endl;
 		}
 		if (strcmp(word1, command10) == 0)
 		{
-			n.book_info(word2);
+			n.book_info(filename,word2);
 			std::cout << "This command is being done succesfully." << std::endl;
 		}
 		if (strcmp(word1, command11) == 0)
 		{
-			word3 = separate_arg2(word2);
-			n.books_find(word2,word3);
+			word3 = separate_string2(word2);
+			word2 = separate_string1(word2);
+			n.books_find(filename,word2,word3);
 			std::cout << "This command is being done succesfully." << std::endl;
 		}
 		if (strcmp(word1, command12) == 0)
 		{
-			word3 = separate_arg2(word2);
+			word3 = separate_string2(word2);
 			n.books_sort(word2, word3);
 			std::cout << "This command is being done succesfully." << std::endl;
 		}
 		if (strcmp(word1, command13) == 0)
 		{
-			word3 = separate_arg2(word2);
+			word3 = separate_string2(word2);
+			word2 = separate_string1(word2);
 			n.add_users("Users.txt",word2, word3);
 			std::cout << "This command is being done succesfully." << std::endl;
 		}
@@ -243,19 +212,29 @@ int main()
 		}
 		if (strcmp(word1, command15) == 0)
 		{
-			//n.book_add();
+			
+			std::getline(std::cin,s1);
+			std::getline(std::cin, s2);
+			std::getline(std::cin, s3);
+			std::getline(std::cin, s4);
+			std::getline(std::cin, s5);
+			std::getline(std::cin, s6);
+			std::getline(std::cin, s7);
+			std::getline(std::cin, s8);
+			n.book_add(filename,s1,s2,s3,s4,s5,s6,s7,s8);
 			std::cout << "This command does not work succesfully." << std::endl;
 		}
 		if (strcmp(word1, command16) == 0)
 		{
-			//n.remove_book("Users.txt", word2);
-			std::cout << "This command does not work succesfully." << std::endl;
+			n.remove_book(filename,word2);
+			std::cout << "This command is being done succesfully." << std::endl;
 		}
 		
 
 		if (strcmp(word1, command1) != 0 && strcmp(word1, command2) != 0 && strcmp(word1, command3) != 0 && strcmp(word1, command4) != 0 && strcmp(word1, command5) != 0
 			&& strcmp(word1, command6) != 0 && strcmp(word1, command7) != 0 && strcmp(word1, command8) != 0 && strcmp(word1,command9)!=0 && strcmp(word1, command10) != 0 && 
-			strcmp(word1, command11) != 0 && strcmp(word1, command12) != 0 && strcmp(word1, command13) != 0 && strcmp(word1, command14) != 0)
+			strcmp(word1, command11) != 0 && strcmp(word1, command12) != 0 && strcmp(word1, command13) != 0 && strcmp(word1, command14) != 0 && strcmp(word1, command15) != 0
+			&& strcmp(word1, command16) != 0)
 		{
 			std::cout << "Invalid input. Please,enter help\" \"" << std::endl;
 		}
