@@ -392,7 +392,13 @@ void Book::books_sort(std::string filename, std::string s1, std::string s2)
 			changed = sort_asc(author_);
 			for (int i = 0; i < changed.size(); i++)
 			{
-				std::cout << changed[i] << std::endl;
+				for (int j = 0; j < author_.size(); j++)
+				{
+					if (changed[i] == author_[j])
+					{
+						std::cout << all_content[j];
+					}
+				}
 			}
 		}
 		if (s2 == "year")
@@ -448,7 +454,13 @@ void Book::books_sort(std::string filename, std::string s1, std::string s2)
 			changed = sort_desc(author_);
 			for (int i = 0; i < changed.size(); i++)
 			{
-				std::cout << changed[i] << std::endl;
+				for (int j = 0; j < author_.size(); j++)
+				{
+					if (changed[i] == author_[j])
+					{
+						std::cout << all_content[j];
+					}
+				}
 			}
 		}
 		if (s2 == "year")
