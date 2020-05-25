@@ -9,17 +9,28 @@ table::table()
 	this->max_rps = 0;
 	this->max_word = 0;
 }
+/*!
+ The constructor of class table
+*/
+
 table::table(std::string str_new)
 {
 	init_file(str_new);
 }
+/*!
+	 The another constructor of class table
+*/
+
 table::~table()
 {
 	str.clear();
 	index = nullptr;
 	delete[]index;
-
 }
+/*!
+	  The destructor of class table
+*/
+
 int table::position_of_cell(std::string cell_ind)
 {
 	int pos_of_cell = 0;
@@ -42,13 +53,15 @@ int table::position_of_cell(std::string cell_ind)
 	pos_of_cell += convert_string(s);
 	return pos_of_cell;
 }
+
 void table::empty()
 {
 	str.clear();
 	index = nullptr;
 	delete[]index;
 }
-int table::point(std::string s)
+
+int table::point(std::string s) 
 {
 	int br_point = 0;
 	for (int i = 0; i < s.length(); i++)
@@ -68,7 +81,8 @@ double table::convert_string(std::string s)
 	double x = 0;
 	geek >> x;
 	return x;
-}
+} 
+
 std::string table::convert_again(double degree)
 {
 	std::ostringstream sstream;
@@ -88,7 +102,8 @@ int table::count_symbol1(std::string s)
 		}
 	}
 	return count;
-}
+} 
+
 int table::count_symbol2()
 {
 	int count = 0;
@@ -101,6 +116,7 @@ int table::count_symbol2()
 	}
 	return count;
 }
+
 bool table::is_digit(std::string str)
 {
 	int ind = 0;
@@ -118,7 +134,6 @@ bool table::is_digit(std::string str)
 	}
 	return false;
 }
-
 
 void table::print()
 {
@@ -144,14 +159,12 @@ void table::print()
 		this->str.insert(index[i + 1], space);
 		space.clear();
 	}
-
+	std::cout << "This operation is being done successfully" << std::endl;
 	std::cout << std::endl;
 	std::cout << this->str;
 	std::cout << std::endl;
 
-
-
-}
+} 
 
 void table::max_len()
 {
@@ -163,6 +176,8 @@ void table::max_len()
 		}
 	}
 }
+
+
 void table::init_file(std::string filename)
 {
 	std::fstream file(filename);
@@ -344,6 +359,9 @@ std::string table::call_to(int counter_cell)
 	}
 	return res;
 }
+/*!
+Take value of this cell
+*/
 void  table::change_value(std::string new_str, std::string cell_number)
 {
 	std::string res;
@@ -367,18 +385,7 @@ void  table::change_value(std::string new_str, std::string cell_number)
 	}
 	std::cout << "The change is being done succesfully!" << std::endl;
 }
-void table::recognize_fdegree(std::string input)
-{
 
-	if (input[0] == '=')
-	{
-		input.erase(input.begin() + 1, input.end());
-	}
-	double value = formula_degree(input);
-	std::string new_str;
-	new_str = std::to_string(value);
-
-}
 void table::is_valid()
 {
 	std::string s;
@@ -394,7 +401,7 @@ void table::is_valid()
 		}
 		s.clear();
 	}
-}
+}/*Check for valid type*/
 void table::formula(std::string input, std::string cell_ind)
 {
 	int pos_of_cell = position_of_cell(cell_ind);
@@ -586,7 +593,6 @@ void table::formula2(std::string input, std::string cell)
 	}
 	if (pos_of_cell == 1) index[pos_of_cell - 1]++;
 }
-
 
 double table::formula_degree(std::string my_str)
 {

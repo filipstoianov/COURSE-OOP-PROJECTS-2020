@@ -22,7 +22,7 @@ Book::~Book()
 	all_content.clear();
 	ibn.clear();
 	title_.clear();
-    author_.clear();
+	author_.clear();
 	tag_.clear();
 	year_.clear();
 	rating_.clear();
@@ -30,14 +30,14 @@ Book::~Book()
 }
 Book::Book(std::string s1, std::string s2, std::string s3, std::string s4, std::string s5, std::string s6, std::string s7, std::string s8)
 {
-	init_book(s1,s2,s3,s4,s5,s6,s7,s8);
+	init_book(s1, s2, s3, s4, s5, s6, s7, s8);
 }
 Book::Book(std::string filename)
 {
 	init_file_book(filename);
 }
 std::string storage;
-void Book::book_add(std::string filename,std::string s1, std::string s2, std::string s3, std::string s4, std::string s5, std::string s6, std::string s7, std::string s8)
+void Book::book_add(std::string filename, std::string s1, std::string s2, std::string s3, std::string s4, std::string s5, std::string s6, std::string s7, std::string s8)
 {
 	this->author = "Author:";
 	std::string st;
@@ -57,7 +57,7 @@ void Book::book_add(std::string filename,std::string s1, std::string s2, std::st
 	s += this->title;
 	s += '\n';
 	all += '\n';
-	all+= this->title;
+	all += this->title;
 	title_.push_back(this->title);
 	this->genre = "Genre:";
 	this->genre += s3;
@@ -85,11 +85,11 @@ void Book::book_add(std::string filename,std::string s1, std::string s2, std::st
 	this->rating += s7;
 	st += this->rating;
 	st += '\n';
-	
+
 	rating_.push_back(this->rating);
 	this->isbn = "ISBN:";
 	this->isbn += s8;
-	ibn.push_back(this->isbn); 
+	ibn.push_back(this->isbn);
 	s += this->isbn;
 	s += '\n';
 	st += this->isbn;
@@ -104,20 +104,20 @@ void Book::book_add(std::string filename,std::string s1, std::string s2, std::st
 	all_.push_back(all);
 	all.clear();
 	std::fstream my_file;
-	my_file.open(filename, std::ios::out|std::ios::app);
-	my_file << all_content[all_content.size()-1];
+	my_file.open(filename, std::ios::out | std::ios::app);
+	my_file << all_content[all_content.size() - 1];
 	std::cout << "This command is being done succesfully." << std::endl;
 	my_file.close();
-	
+
 }
 std::vector<std::string> Book::sort_asc(std::vector<std::string> v)
 {
 	std::string swap;
-	for (int i = 0; i < v.size()-1; i++)
+	for (int i = 0; i < v.size() - 1; i++)
 	{
 		for (int j = i + 1; j < v.size(); j++)
 		{
-			if (v[i]>v[j])
+			if (v[i] > v[j])
 			{
 				swap = v[i];
 				v[i] = v[j];
@@ -144,39 +144,39 @@ std::vector<std::string> Book::sort_desc(std::vector< std::string> v)
 	}
 	return v;
 }
-void Book::remove_book(std::string filename,std::string title)
+void Book::remove_book(std::string filename, std::string title)
 {
 	std::fstream my_file;
 	std::string res;
-	title.insert(0,"Title:");
+	title.insert(0, "Title:");
 	size_t found = 0;
-	for (int i = 0; i < all_content.size();++i)
+	for (int i = 0; i < all_content.size(); ++i)
 	{
 		found = title_[i].find(title);
-		if (found!=std::string::npos)
+		if (found != std::string::npos)
 		{
-			all_content.erase(all_content.begin()+i);
-			all_.erase(all_.begin()+i,all_.end());
-			ibn.erase(ibn.begin()+i);
-			title_.erase(title_.begin()+i);
+			all_content.erase(all_content.begin() + i);
+			all_.erase(all_.begin() + i, all_.end());
+			ibn.erase(ibn.begin() + i);
+			title_.erase(title_.begin() + i);
 			author_.erase(author_.begin() + i);
 			tag_.erase(tag_.begin() + i);
 		}
 	}
 	std::cout << "This command is being done succesfully." << std::endl;
-	my_file.open(filename,std::ios::out|std::ios::trunc);
+	my_file.open(filename, std::ios::out | std::ios::trunc);
 	for (int i = 0; i < all_content.size(); ++i)
 	{
 		my_file << all_content[i];
 	}
 	my_file.close();
 }
-void Book::books_all() 
+void Book::books_all()
 {
 	std::cout << "Information about the books:" << std::endl;
 	for (int i = 0; i < all_.size(); ++i)
 	{
-			std::cout << all_[i];
+		std::cout << all_[i];
 	}
 	std::cout << std::endl;
 }
@@ -200,7 +200,7 @@ void Book::init_book(std::string s1, std::string s2, std::string s3, std::string
 	this->key_words = s6;
 	this->rating = s7;
 	this->isbn = s8;
-	
+
 
 }
 void Book::init_file_book(std::string filename)
@@ -272,26 +272,26 @@ void Book::init_file_book(std::string filename)
 	file.close();
 
 }
-void Book::book_info(std::string filename,std::string ISBN)
+void Book::book_info(std::string filename, std::string ISBN)
 {
 	bool f = false;
 	ISBN.insert(0, "ISBN:");
 	for (int i = 0; i < ibn.size(); ++i)
 	{
-		if (ISBN==ibn[i])
+		if (ISBN == ibn[i])
 		{
 			std::cout << "Info book:" << std::endl;
 			std::cout << all_content[i] << std::endl;
 			f = true;
 		}
 	}
-	if(f==false)
+	if (f == false)
 	{
-			std::cout << "The book is not available in this library.";
-		    std::cout<< "Check your ISBN."<< std::endl;
+		std::cout << "The book is not available in this library.";
+		std::cout << "Check your ISBN." << std::endl;
 	}
 }
-void Book::books_find(std::string filename,std::string s1,std::string s2)
+void Book::books_find(std::string filename, std::string s1, std::string s2)
 {
 	init_file_book(filename);
 	bool f1 = false;
@@ -300,12 +300,12 @@ void Book::books_find(std::string filename,std::string s1,std::string s2)
 	size_t found = 0;
 	int index = 0;
 	if (s1 == "author")
-	{  
-		s2.insert(0,"Author:");
+	{
+		s2.insert(0, "Author:");
 		for (int i = 0; i < author_.size(); i++)
 		{
 			found = author_[i].find(s2);
-			if (found!=std::string::npos)
+			if (found != std::string::npos)
 			{
 				f1 = true;
 				index = i;
@@ -323,10 +323,10 @@ void Book::books_find(std::string filename,std::string s1,std::string s2)
 	}
 	if (s1 == "title")
 	{
-		s2.insert(0,"Title:");
+		s2.insert(0, "Title:");
 		for (int i = 0; i < title_.size(); i++)
 		{
-			if (title_[i]==s2)
+			if (title_[i] == s2)
 			{
 				f2 = true;
 				index = i;
@@ -338,7 +338,7 @@ void Book::books_find(std::string filename,std::string s1,std::string s2)
 			std::cout << "YES, THIS BOOK IS ACCEPTABLE" << "\n" << all_content[index] << std::endl;
 		}
 		else
-		{ 
+		{
 			std::cout << "NO,THIS BOOK IS NOT ACCEPTABLE IN OUR LIBRARY" << std::endl;
 		}
 	}
@@ -348,7 +348,7 @@ void Book::books_find(std::string filename,std::string s1,std::string s2)
 		for (int i = 0; i < tag_.size(); i++)
 		{
 			found = tag_[i].find(s2);
-			if (found!=std::string::npos)
+			if (found != std::string::npos)
 			{
 				f3 = true;
 				index = i;
@@ -367,14 +367,14 @@ void Book::books_find(std::string filename,std::string s1,std::string s2)
 }
 
 
-void Book::books_sort(std::string filename,std::string s1,std::string s2)
+void Book::books_sort(std::string filename, std::string s1, std::string s2)
 {
 	std::vector<std::string>changed;
-	if (s1=="asc")
+	if (s1 == "asc")
 	{
 		if (s2 == "title")
 		{
-		    changed=sort_asc(title_);
+			changed = sort_asc(title_);
 			for (int i = 0; i < changed.size(); i++)
 			{
 				for (int j = 0; j < title_.size(); j++)
@@ -389,7 +389,7 @@ void Book::books_sort(std::string filename,std::string s1,std::string s2)
 		}
 		if (s2 == "author")
 		{
-			changed=sort_asc(author_);
+			changed = sort_asc(author_);
 			for (int i = 0; i < changed.size(); i++)
 			{
 				std::cout << changed[i] << std::endl;
@@ -397,7 +397,7 @@ void Book::books_sort(std::string filename,std::string s1,std::string s2)
 		}
 		if (s2 == "year")
 		{
-			changed=sort_asc(year_);
+			changed = sort_asc(year_);
 			for (int i = 0; i < changed.size(); i++)
 			{
 				for (int j = 0; j < year_.size(); j++)
@@ -412,8 +412,8 @@ void Book::books_sort(std::string filename,std::string s1,std::string s2)
 		}
 		if (s2 == "rating")
 		{
-			changed=sort_asc(rating_);
-			for (int i = 0; i <changed.size(); i++)
+			changed = sort_asc(rating_);
+			for (int i = 0; i < changed.size(); i++)
 			{
 				for (int j = 0; j < rating_.size(); j++)
 				{
@@ -430,7 +430,7 @@ void Book::books_sort(std::string filename,std::string s1,std::string s2)
 	{
 		if (s2 == "title")
 		{
-			changed=sort_desc(title_);
+			changed = sort_desc(title_);
 			for (int i = 0; i < changed.size(); i++)
 			{
 				for (int j = 0; j < title_.size(); j++)
@@ -448,12 +448,12 @@ void Book::books_sort(std::string filename,std::string s1,std::string s2)
 			changed = sort_desc(author_);
 			for (int i = 0; i < changed.size(); i++)
 			{
-				std::cout << changed[i] << std::endl; 
+				std::cout << changed[i] << std::endl;
 			}
 		}
 		if (s2 == "year")
 		{
-			changed=sort_desc(year_);
+			changed = sort_desc(year_);
 			for (int i = 0; i < changed.size(); i++)
 			{
 				for (int j = 0; j < year_.size(); j++)
@@ -468,7 +468,7 @@ void Book::books_sort(std::string filename,std::string s1,std::string s2)
 		}
 		if (s2 == "rating")
 		{
-			changed=sort_desc(rating_);
+			changed = sort_desc(rating_);
 			for (int i = 0; i < changed.size(); i++)
 			{
 				for (int j = 0; j < rating_.size(); j++)
@@ -478,7 +478,7 @@ void Book::books_sort(std::string filename,std::string s1,std::string s2)
 						std::cout << all_content[j];
 					}
 				}
- 			}
+			}
 			std::cout << "This command is being done succesfully." << std::endl;
 		}
 	}

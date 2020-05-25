@@ -1,5 +1,3 @@
-29.09   ,12      ,19      
-hello   ,89.90   ,99.0.99 
-145.45  ,360     ,72      
-12      ,34.123  ,friends 
-        ,        ,
+190,hello,fitness
+90,89,10
+100,This is my friend

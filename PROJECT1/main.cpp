@@ -1,6 +1,11 @@
 #include<iostream>
 #include"table.h"
+#include<string>
 char* separate_string2(std::string str1)
+/*!
+   Take the first word of the entered string
+   and return  char* array, the word 
+*/
 {
 	size_t len = str1.length();
 	char* new_buffer = (char*)(malloc(sizeof(char)));
@@ -26,6 +31,10 @@ char* separate_string2(std::string str1)
 
 char* separate_string1(std::string str1)
 {
+  /*!
+    Take the second word of the entered string
+    return char*array, the second word
+  */
 	size_t len = str1.length();
 	char* new_buffer = (char*)(malloc(sizeof(char)));
 	size_t ind = 0;
@@ -47,68 +56,11 @@ char* separate_string1(std::string str1)
 	new_buffer[new_length] = '\0';
 	return new_buffer;
 }
-char* separate_arg1(std::string str1)
-{
-	size_t len = str1.length();
-	char* new_buffer = (char*)(malloc(sizeof(char)));
-	size_t ind = 0;
-	size_t new_length = 0;
-	for (size_t i = 0; i < len; ++i)
-	{
-		if (str1[i] == 'R')
-		{
-			new_length = i;
-			break;
-		}
-	}
-	new_buffer = new char[new_length];
-	for (size_t j = 0; j < new_length; ++j)
-	{
-		new_buffer[ind] = str1[j];
-		ind++;
-	}
-	new_buffer[new_length] = '\0';
-	return new_buffer;
-}
-char* separate_arg2(std::string str1)
-{
-	size_t len = str1.length();
-	char* new_buffer = (char*)(malloc(sizeof(char)));
-	size_t ind = 0;
-	size_t new_length = 0;
-	for (size_t i = 0; i < len; ++i)
-	{
-		if (str1[i] == 'R')
-		{
-			new_length = i;
-			break;
-		}
-	}
-	new_buffer = new char[len - new_length];
-	for (size_t j = new_length; j < len; ++j)
-	{
-		new_buffer[ind] = str1[j];
-		ind++;
-	}
-	new_buffer[len - new_length] = '\0';
-	return new_buffer;
-}
-bool has_interval(std::string s)
-{
-	for (int i = 0; i < s.length(); i++)
-	{
-		if (s[i] == ' ') return true;
-	}
-	return false;
-}
+
+
 int main()
 {
 
-	/*read_file n;
-	n.init_file("reading.txt");
-	n.init_index();
-	n.change_value("14","R4C3");
-	n.print();*/
 	table n;
 	std::string str;
 	const char* command1 = "open";
@@ -119,6 +71,9 @@ int main()
 	const char* command6 = "exit";
 	const char* command7 = "print";
 	const char* command8 = "edit";
+	/*!
+	  Declaration of  char* type user's commands
+	*/
 	std::fstream file;
 	std::fstream file_new;
 	std::string s;
@@ -126,12 +81,21 @@ int main()
 	char* word2 = (char*)(malloc(sizeof(char)));
 	char* word3 = (char*)(malloc(sizeof(char)));
 	char* name = (char*)(malloc(sizeof(char)));
-	while (true)
+	/*!
+	 Initiliaze char* array of user's commands
+	*/
+	
+	while (true) /*!
+				 Enter commands by the user
+				 */
 	{
 		std::getline(std::cin, str);
 		word1 = separate_string1(str);
 		word2 = separate_string2(str);
 		word3 = separate_string2(word2);
+		/*!
+		Check for commands
+		*/
 		if (strcmp(word1, command1) == 0)
 		{
 			file.open(word2, std::ios::in);
@@ -170,8 +134,8 @@ int main()
 			{
 				file << s[i];
 			}
-			file.close();
 			std::cout << "Successfully saved in the same file" << std::endl;
+			file.close();
 		}
 		if (strcmp(word1, command4) == 0)
 		{
@@ -184,8 +148,9 @@ int main()
 			{
 				new_file << s[i];
 			}
-			new_file.close();
+
 			std::cout << "Successfully saved in the another file" << std::endl;
+			new_file.close();
 			s.clear();
 		}
 		if (strcmp(word1, command5) == 0)
@@ -207,7 +172,7 @@ int main()
 		if (strcmp(word1, command7) == 0)
 		{
 			n.print();
-			std::cout << "This operation is being done successfully" << std::endl;
+			
 		}
 		if (strcmp(word1, command8) == 0)
 		{
@@ -242,6 +207,4 @@ int main()
 			std::cout << "Invalid input. Please,enter help\" \"" << std::endl;
 		}
 	}
-
-	return 0;
 }

@@ -95,7 +95,7 @@ int main()
 	std::string s8;;
 	std::string filename;
 	file.open("Users.txt", std::ios::out);
-	file << "admin" << " " << "i<3c++" << " " << "administrator" << std::endl;
+	file << "admin"<<" "<< "i<3c++"<< std::endl;
 	file.close();
 	/*!
 	Enter command
@@ -146,7 +146,7 @@ int main()
 			std::fstream new_file;
 			new_file.open(word2, std::ios::out);
 			std::string s;
-		    s=n.copy();
+			s = n.copy();
 			new_file << s;
 			new_file.close();
 			std::cout << "Successfully saved in the another file" << std::endl;
@@ -161,15 +161,15 @@ int main()
 			std::cout << "saveas <file>	saves the currently open file in <file>" << std::endl;
 			std::cout << "help\" \"			prints this information" << std::endl;
 			std::cout << "exit\" \"			exists the program" << std::endl;
-			std::cout << "login <username> <password>  login the program" << std:: endl;
+			std::cout << "login <username> <password>  login the program" << std::endl;
 			std::cout << "logout <username>           logout the program" << std::endl;
 			std::cout << "books_all\" \"  the whole information about the books" << std::endl;
 			std::cout << "books_info <isbn_value>    prints the information about the book with this isbn " << std::endl;
-		    std::cout << "books_find <option><option_string>  prints the information about this book" << std::endl;
+			std::cout << "books_find <option><option_string>  prints the information about this book" << std::endl;
 			std::cout << "books_sort <option> <(asc)|desc>    sort the books" << std::endl;
 			std::cout << "users_add <username> <password> the administrator adds a new user in the system" << std::endl;
 			std::cout << "users_remove <username> the administrator removes the user from the system" << std::endl;
-			std::cout << "books_add <author> <title> <genre> <desription> <published year> <key_words> <rating> <isbn>       add book in the library" << std:: endl;
+			std::cout << "books_add <author> <title> <genre> <desription> <published year> <key_words> <rating> <isbn>       add book in the library" << std::endl;
 			std::cout << "books_remove <title>          the administrator removes this book from the library" << std::endl;
 
 		}
@@ -179,17 +179,17 @@ int main()
 			break;
 
 		}
-		if (strcmp(word1, command7) == 0 )
+		if (strcmp(word1, command7) == 0)
 		{
 			word2 = separate_string1(word2);
 			word3 = separate_string2(word2);
 			n.init_file("Users.txt");
-			n.log_in(word2,word3);
+			n.log_in(word2, word3);
 		}
 		if (strcmp(word1, command8) == 0)
 		{
 			n.log_out(word2);
-			
+
 		}
 		if (strcmp(word1, command9) == 0)
 		{
@@ -197,29 +197,29 @@ int main()
 		}
 		if (strcmp(word1, command10) == 0)
 		{
-			n.book_info(filename,word2);
-			
+			n.book_info(filename, word2);
+
 		}
 		if (strcmp(word1, command11) == 0)
 		{
 			word3 = separate_string2(word2);
 			word2 = separate_string1(word2);
-			n.books_find(filename,word2,word3);
-		
+			n.books_find(filename, word2, word3);
+
 		}
 		if (strcmp(word1, command12) == 0)
 		{
 			word3 = separate_string2(word2);
 			word2 = separate_string1(word2);
-			n.books_sort(filename,word2, word3);
-			
+			n.books_sort(filename, word2, word3);
+
 		}
 		if (strcmp(word1, command13) == 0)
 		{
 			word3 = separate_string2(word2);
 			word2 = separate_string1(word2);
-			n.add_users("Users.txt",word2, word3);
-			
+			n.add_users("Users.txt", word2, word3);
+
 		}
 		if (strcmp(word1, command14) == 0)
 		{
@@ -227,8 +227,8 @@ int main()
 		}
 		if (strcmp(word1, command15) == 0)
 		{
-			
-			std::getline(std::cin,s1);
+
+			std::getline(std::cin, s1);
 			std::getline(std::cin, s2);
 			std::getline(std::cin, s3);
 			std::getline(std::cin, s4);
@@ -236,17 +236,17 @@ int main()
 			std::getline(std::cin, s6);
 			std::getline(std::cin, s7);
 			std::getline(std::cin, s8);
-			n.book_add(filename,s1,s2,s3,s4,s5,s6,s7,s8);
+			n.book_add(filename, s1, s2, s3, s4, s5, s6, s7, s8);
 		}
 		if (strcmp(word1, command16) == 0)
 		{
-			n.remove_book(filename,word2);
-			
+			n.remove_book(filename, word2);
+
 		}
-		
+
 
 		if (strcmp(word1, command1) != 0 && strcmp(word1, command2) != 0 && strcmp(word1, command3) != 0 && strcmp(word1, command4) != 0 && strcmp(word1, command5) != 0
-			&& strcmp(word1, command6) != 0 && strcmp(word1, command7) != 0 && strcmp(word1, command8) != 0 && strcmp(word1,command9)!=0 && strcmp(word1, command10) != 0 && 
+			&& strcmp(word1, command6) != 0 && strcmp(word1, command7) != 0 && strcmp(word1, command8) != 0 && strcmp(word1, command9) != 0 && strcmp(word1, command10) != 0 &&
 			strcmp(word1, command11) != 0 && strcmp(word1, command12) != 0 && strcmp(word1, command13) != 0 && strcmp(word1, command14) != 0 && strcmp(word1, command15) != 0
 			&& strcmp(word1, command16) != 0)
 		{
@@ -254,6 +254,6 @@ int main()
 		}
 	}
 
-	
+
 	return 0;
 }

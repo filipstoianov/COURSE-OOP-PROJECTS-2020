@@ -43,23 +43,7 @@ void User::init(std::string s, std::string passw,std::string type)
 	}
 	
 }
-void User::print_clients(std::string filename)
-{
-	for (int i = 0; i < names_client.size(); i++)
-	{
-		std::cout << names_client[i] << std::endl;
-	}
-	std::cout << std::endl;
-	names_client.clear();
-}
-void User::print_administrator()
-{
-	for (int i = 0; i < names_administrator.size(); i++)
-	{
-			std::cout << names_administrator[i] << std::endl;
-	}
-		std::cout << std::endl;
-	}
+
 void User::init_file(std::string filename)
 {
 	std::fstream file;
@@ -122,7 +106,7 @@ void User::init_file(std::string filename)
 			 all_users.erase(all_users.begin() + i);
 		 }
 	 }
-	 my_file.open(filename, std::ios::out);
+	 my_file.open(filename, std::ios::out,std::ios::trunc);
 
 	 for (int i = 0; i < all_users.size(); i++)
 	 {
@@ -172,16 +156,5 @@ void User::log_out(std::string s)
 	std::cout << "You leave the system!" << " Enter new name:" << std::endl;
 	enter_client = false;
 }
-void User::user_add(std::string s, std::string passw)
-{
-	if (enter_client == true && enter_administrator==true)
-	{
-		names_client.push_back(s);
-	}
-	else
-	{
 
-		std::cout << "You must be logged in the system!"<< std::endl;
-	}
-}
 

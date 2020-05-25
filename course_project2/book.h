@@ -4,7 +4,7 @@ class Book /*!
 		   define class Book
 		   */
 {
-	private: 
+private:
 	/*!
 	Private members of class Book
 	*/
@@ -19,19 +19,19 @@ class Book /*!
 	std::vector<std::string>save;
 	std::vector <std::string>all_content;
 	/*!
-    Save all information about the books from the library
-    */
+	Save all information about the books from the library
+	*/
 
 	std::vector<std::string>ibn;
 	/*!
-    Save the isbn of books from the library
-    */
+	Save the isbn of books from the library
+	*/
 
 	std::vector<std::string>title_;
 	/*!
 	Save the titles of books from the library
 	*/
-	
+
 	std::vector<std::string>author_;
 	/*!
 	Save the authors of books from the library
@@ -50,8 +50,8 @@ class Book /*!
 	*/
 	std::vector<std::string>all_;
 	/*!
-    Save author,title,genre and rating of books from the library
-    */
+	Save author,title,genre and rating of books from the library
+	*/
 
 
 public:
@@ -82,19 +82,19 @@ public:
 	Book(std::string filename);
 	/*!
 	*/
-	void book_info(std::string filename,std::string ISBN);
+	void book_info(std::string filename, std::string ISBN);
 	/*!
 	Print whole infor about book
 	*/
-	void books_find(std::string filename,std::string s1, std::string s2);
+	void books_find(std::string filename, std::string s1, std::string s2);
 	/*!
 	Find book in library
 	*/
-	void books_sort(std::string filename,std::string s1, std::string s2);
+	void books_sort(std::string filename, std::string s1, std::string s2);
 	/*!
 	Sort all books in library (desc and asc sort)
 	*/
-	void remove_book(std::string filename,std::string title);
+	void remove_book(std::string filename, std::string title);
 	/*!
 	Remove book from library
 	*/
@@ -112,6 +112,6 @@ public:
 	*/
 	std::string copy();
 	/*!
-	Copy string 
+	Copy string
 	*/
 };

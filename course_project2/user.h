@@ -11,7 +11,7 @@ private:
 	/*!
 	Private members of class User
 	*/
-	std::string username; 
+	std::string username;
 	std::string password;
 	std::string access;
 	std::vector <std::string> names_client;
@@ -20,7 +20,7 @@ private:
 	bool enter_client = false;
 	int reps = 0;
 public:
-	void log_in(std::string name,std::string pasw);
+	void log_in(std::string name, std::string pasw);
 	User();
 	/*!
 	Constructor of class User
@@ -29,13 +29,13 @@ public:
 	/*!
 	The another constructor of class User
 	*/
-	User(std::string s, std::string passw,std::string type);
+	User(std::string s, std::string passw, std::string type);
 	/*!
 	Constructor of class User
 	*/
 	~User();
 	/*!
-	Destructor of class User 
+	Destructor of class User
 	*/
 	void init(std::string s, std::string passw, std::string access);
 	/*!
@@ -43,13 +43,13 @@ public:
 	*/
 	void log_out(std::string s);
 	/*!
-    The user logs out from system
+	The user logs out from system
 	*/
 	void init_file(std::string filename);
 	/*!
 	Initialize private members of the class from file
 	*/
-	std::ofstream& output(std::fstream file,User u);
+	std::ofstream& output(std::fstream file, User u);
 	/*!
 	Output object method
 	*/
