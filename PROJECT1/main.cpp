@@ -121,6 +121,7 @@ int main()
 	const char* command8 = "edit";
 	std::fstream file;
 	std::fstream file_new;
+	std::string s;
 	char* word1 = (char*)(malloc(sizeof(char)));
 	char* word2 = (char*)(malloc(sizeof(char)));
 	char* word3 = (char*)(malloc(sizeof(char)));
@@ -130,48 +131,53 @@ int main()
 		std::getline(std::cin, str);
 		word1 = separate_string1(str);
 		word2 = separate_string2(str);
+		word3 = separate_string2(word2);
 		if (strcmp(word1, command1) == 0)
 		{
 			file.open(word2, std::ios::in);
 			if (!file)
 			{
 				file_new.open(word2, std::ios::out);
-				std::cout << "Succesfully created new file with the same name!" << std::endl;
-				
+				std::cout << "Succesfully created new file with the same name!";;
+				std::cout << std::endl;
+
 			}
 			else
 			{
+				n.empty();
+				name= word2;
 				n.init_file(word2);
 				n.init_index();
 				std::cout << "Succesfully opened!";
-				
+				std::cout << std::endl;
+
 			}
 
 		}
 		if (strcmp(word1, command2) == 0)
 		{
-	
+
 			file.close();
 			std::cout << "Successfully closed" << std::endl;
 		}
 		if (strcmp(word1, command3) == 0)
 		{
-			    file.close();
-				file.open(word2, std::ios::out | std::ios::trunc);
-				std::string s;
-				s += n.copy();
-				for (int i = 0; i < s.length(); i++)
-				{
-					file << s[i];
-				}
-				file.close();
+			file.close();
+			file.open(name, std::ios::out | std::ios::trunc);
+			std::string s;
+			s += n.copy();
+			for (int i = 0; i < s.length(); i++)
+			{
+				file << s[i];
+			}
+			file.close();
 			std::cout << "Successfully saved in the same file" << std::endl;
 		}
 		if (strcmp(word1, command4) == 0)
 		{
 			file.close();
 			std::fstream new_file;
-			new_file.open(word2,std::ios::out);
+			new_file.open(word2, std::ios::out);
 			std::string s;
 			s += n.copy();
 			for (int i = 0; i < s.length(); i++)
@@ -188,7 +194,7 @@ int main()
 			std::cout << "open <file>	opens <file>" << std::endl;
 			std::cout << "close <file>	closes currently opened file" << std::endl;
 			std::cout << "save	<file>	saves the currently open file" << std::endl;
-			std::cout << "saveas <file>	saves the currently open file in <file>" << std::endl;
+			std::cout << "save-as <file>	saves the currently open file in <file>" << std::endl;
 			std::cout << "help\" \"			prints this information" << std::endl;
 			std::cout << "exit\" \"			exists the program" << std::endl;
 
@@ -200,29 +206,35 @@ int main()
 		}
 		if (strcmp(word1, command7) == 0)
 		{
-			n.init_index();
 			n.print();
-			std::cout << "This operation is being done successfully" << std:: endl;
+			std::cout << "This operation is being done successfully" << std::endl;
 		}
 		if (strcmp(word1, command8) == 0)
 		{
-          	if (word2[0] != '=')
+
+			if (word3[0] != '=')
 			{
-				word3 = separate_arg2(word2);
 				n.init_file(word1);
-				n.init_index();
-				word2 = separate_arg1(word2);
-				n.change_value(word2, word3);
-			}
-			else
-			{
-				word3 = separate_string2(word2);
-				n.init_file(word1);
-				n.init_index();
+				n.check_for();
 				word2 = separate_string1(word2);
-				n.formula(word2, word3);
+				n.change_value(word3, word2);
 			}
-			
+			s = word3;
+			if(word3[0]=='=' && s.find('R')!=std::string::npos && s.find('C') != std::string::npos)
+			{
+				n.init_file(word1);
+				n.check_for();
+				word2 = separate_string1(word2);
+				n.formula(word3, word2);
+			}
+			if (word3[0] == '=' && s.find('R') == std::string::npos && s.find('C') == std::string::npos)
+			{
+				n.init_file(word1);
+				n.check_for();
+				word2 = separate_string1(word2);
+				n.formula2(word3, word2);
+			}
+
 		}
 		if (strcmp(word1, command1) != 0 && strcmp(word1, command2) != 0 && strcmp(word1, command3) != 0 && strcmp(word1, command4) != 0 && strcmp(word1, command5) != 0
 			&& strcmp(word1, command6) != 0 && strcmp(word1, command7) != 0 && strcmp(word1, command8) != 0)
@@ -230,16 +242,6 @@ int main()
 			std::cout << "Invalid input. Please,enter help\" \"" << std::endl;
 		}
 	}
-
-
-
-
-
-
-
-
-
-
 
 	return 0;
 }

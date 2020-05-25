@@ -31,10 +31,11 @@ public:
 	Book(std::string filename);
 	void book_info(std::string filename,std::string ISBN);
 	void books_find(std::string filename,std::string s1, std::string s2);
-	void books_sort(std::string s1, std::string s2);
+	void books_sort(std::string filename,std::string s1, std::string s2);
 	void remove_book(std::string filename,std::string title);
 	std::vector<std::string> sort_asc(std::vector < std::string> v);
 	std::vector<std::string>sort_desc(std::vector < std::string> v);
 	void books_all();
-	void print_all(std::string filename);
+	void print_all();
+	std::string copy();
 };

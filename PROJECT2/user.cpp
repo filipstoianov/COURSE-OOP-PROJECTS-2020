@@ -104,6 +104,7 @@ void User::init_file(std::string filename)
 	 file << std::endl;
 	
 		 file << all_users[all_users.size()-1] << std::endl;
+		 std::cout << "This command is being done succesfully." << std::endl;
 		 file.close();
 		 return;
  }
@@ -128,6 +129,7 @@ void User::init_file(std::string filename)
 		 my_file << all_users[i];
 	 }
 	 my_file.close();
+	 std::cout << "This command is being done succesfully." << std::endl;
 
  }
 

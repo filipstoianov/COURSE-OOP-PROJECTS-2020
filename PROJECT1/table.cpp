@@ -42,7 +42,12 @@ int table::position_of_cell(std::string cell_ind)
 	pos_of_cell += convert_string(s);
 	return pos_of_cell;
 }
-
+void table::empty()
+{
+	str.clear();
+	index = nullptr;
+	delete[]index;
+}
 int table::point(std::string s)
 {
 	int br_point = 0;
@@ -107,7 +112,7 @@ bool table::is_digit(std::string str)
 			ind++;
 		}
 	}
-	if (ind == str.length())
+	if (ind>=str.length())
 	{
 		return true;
 	}
@@ -119,6 +124,8 @@ void table::print()
 {
 	int t = 0;
 	std::string space;
+	init_index();
+	check_for();
 	for (int i = 0; i < this->size - 1; i++)
 	{
 		if (index[i + 1] - index[i] - 1 < this->max_word)
@@ -148,7 +155,7 @@ void table::print()
 
 void table::max_len()
 {
-	for (int i = 0; i < sizeof(index) - 1; i++)
+	for (int i = 0; i < this->size - 1; i++)
 	{
 		if ((index[i + 1] - index[i] - 1) > this->max_word)
 		{
@@ -169,7 +176,9 @@ void table::init_file(std::string filename)
 		}
 		file.close();
 	}
+	init_index();
 	insert_to();
+	is_valid();
 }
 
 void table::init_index()
@@ -231,6 +240,7 @@ void  table::insert_to()
 		{
 			s_new += this->str[j];
 		}
+		
 		br_ = count_symbol1(s_new);
 		if (br_ > max_)
 		{
@@ -271,7 +281,6 @@ void table::check_for()
 	std::string s;
 	double d = 0;
 	bool f = false;
-	std::cout << std::endl;
 	std::string new_str;
 	int p = 0;
 	int j = 0;
@@ -286,6 +295,7 @@ void table::check_for()
 				s += this->str[j];
 				j++;
 			}
+				
 			for (int p = 0; p < s.length() - 1; p++)
 			{
 				if (s[p] == '/' && s[p + 1] == '0')
@@ -369,11 +379,24 @@ void table::recognize_fdegree(std::string input)
 	new_str = std::to_string(value);
 
 }
-
-
+void table::is_valid()
+{
+	std::string s;
+	for (int i = 0; i < this->size-1; ++i)
+	{
+		for (int j = index[i]; j < index[i + 1]; ++j)
+		{
+			s += this->str[j];
+		}
+		if (point(s) > 1)
+		{
+			std::cout<<"Incorrect data type:" << " R"<< (i)/(this->max_rps+1)+1<<"C"<< (i)%(this->max_rps+1)+1<<std::endl;
+		}
+		s.clear();
+	}
+}
 void table::formula(std::string input, std::string cell_ind)
 {
-
 	int pos_of_cell = position_of_cell(cell_ind);
 	std::string res;
 	double new_value = 0;
@@ -414,7 +437,6 @@ void table::formula(std::string input, std::string cell_ind)
 		if (res[i] == ' ')
 		{
 			br2++;
-
 		}
 
 	}
@@ -436,8 +458,9 @@ void table::formula(std::string input, std::string cell_ind)
 	}
 	std::string new_str;
 	std::string cell;
-	bool b = 0;
-	bool f = 0;
+
+	bool f = false;
+	std::string numb;
 	for (int i = 0; i < ind1 - 1; i++)
 	{
 		for (int j = array1[i] + 1; j < array1[i + 1]; j++)
@@ -446,9 +469,19 @@ void table::formula(std::string input, std::string cell_ind)
 			{
 				s_new1 += res[j];
 			}
-			if (j > array2[i])
+			if (j > array2[i] )
 			{
 				s_new2 += res[j];
+			}
+		}
+		for (size_t k = 0; k < s_new2.length(); ++k)
+		{
+			if ((s_new2[k] == '+' || s_new2[k] == '-' || s_new2[k] == '*' || s_new2[k] == '/') || s_new2[k]=='=')
+			{
+				for (size_t t = k ; t < s_new2.length(); ++t)
+				{
+					numb += s_new2[t];
+				}
 			}
 		}
 		number1 = convert_string(s_new1);
@@ -457,7 +490,7 @@ void table::formula(std::string input, std::string cell_ind)
 		number1 = number1 + number2;
 		if (number2 > (this->max_rps + 1) || ((number1 - number2) / (this->max_rps + 1) - 1) > line())
 		{
-			cell = '0';
+			cell = "0";
 		}
 
 		else
@@ -467,42 +500,46 @@ void table::formula(std::string input, std::string cell_ind)
 
 		if (cell.length() < 1 || point(cell) > 1)
 		{
-			cell = '0';
+			cell = "0";
 		}
+		
 		s_new1.clear();
 		s_new2.clear();
 		if (cell == "ERROR")
 		{
 			new_str = "ERROR";
-			b = true;
+			f = true;
 		}
 		else
 		{
 			new_str += cell;
-			if (i < ind1 - 2)
+			new_str += numb;
+			/*if (i < ind1 - 2)
 			{
-				new_str += input[array1[i + 1]];
-			}
+				new_str += input[array1[i]];
+			}*/
 
 		}
+		numb.clear();
 	}
-	for (int k = 0; k < new_str.length() - 2; k++)
+	for (int k = 0; k < new_str.length()-1; k++)
 	{
-		if ((new_str[k] == '/' && new_str[k + 2] == '0') || (new_str[k] == '/' && ((int)new_str[k + 2] - '0' > 9 || (int)new_str[k + 2] - '0' < 0)) || new_str[k] == 'E')
+		if ((new_str[k] == '/' && ((int)new_str[k + 1] -'0'<0 || (int)new_str[k + 1] - '0' > 9)))
 		{
 			f = true;
 		}
 	}
 
-	if (f == true)
+	if (f==true)
 	{
 		change_str = "ERROR";
 	}
 	else
 	{
 		new_value = formula_degree(new_str);
-		change_str += convert_again(new_value);
+		change_str+= convert_again(new_value);
 	}
+	if (change_str == "inf" || change_str=="-nan(ind)") { change_str = "ERROR"; }
 	if (pos_of_cell > 1)
 	{
 		this->str.erase(index[pos_of_cell - 1] + 1, index[pos_of_cell] - index[pos_of_cell - 1] - 1);
@@ -523,12 +560,34 @@ void table::formula(std::string input, std::string cell_ind)
 	delete[]array2;
 }
 
-
-void table::edit_with(int number, std::string f)
+void table::formula2(std::string input, std::string cell)
 {
-	std::string cell = call_to(number);
-
+	int pos_of_cell = position_of_cell(cell);
+	double new_value;
+	std::string change_str;
+	std::string new_str;
+	for (size_t i = 1; i < input.length(); ++i)
+	{
+		new_str += input[i];
+	}
+	new_value = formula_degree(new_str);
+	change_str = convert_again(new_value);
+	if (pos_of_cell > 1)
+	{
+		
+		this->str.erase(index[pos_of_cell - 1] + 1, index[pos_of_cell] - index[pos_of_cell - 1] - 1);
+		this->str.replace(index[pos_of_cell - 1] + 1, 0, change_str);
+	}
+	else
+	{
+	this->str.erase(index[pos_of_cell - 1], index[pos_of_cell] - index[pos_of_cell - 1]);
+	this->str.replace(index[pos_of_cell - 1], 0, change_str);
+	std::cout << "The change is being done successfully!" << std::endl;
+	}
+	if (pos_of_cell == 1) index[pos_of_cell - 1]++;
 }
+
+
 double table::formula_degree(std::string my_str)
 {
 	bool f = 0;
@@ -638,6 +697,10 @@ std::string table:: copy()
 	std::string res;
 	for (int i = 0; i < this->str.length(); i++)
 	{
+		if (this->str[i] == '|')
+		{
+			this->str[i] = ',';
+		}
 		res += this->str[i];
 	}
 	return res;
