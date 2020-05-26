@@ -1,0 +1,264 @@
+\hypertarget{class_user}{}\doxysection{User Class Reference}
+\label{class_user}\index{User@{User}}
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+Inheritance diagram for User\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_user}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_user_a0a82c362b2bac37e8517cb377a60a51a}{log\+\_\+in}} (std\+::string name, std\+::string pasw)
+\item 
+\mbox{\hyperlink{class_user_a4a0137053e591fbb79d9057dd7d2283d}{User}} ()
+\item 
+\mbox{\hyperlink{class_user_af9e5f33114c8330be7b91276b7377e6d}{User}} (std\+::string name)
+\item 
+\mbox{\hyperlink{class_user_a6a9bb4f43e038c3b01ac3504a2767881}{User}} (std\+::string s, std\+::string passw, std\+::string type)
+\item 
+\mbox{\hyperlink{class_user_ac00b72ad64eb4149f7b21b9f5468c2b2}{$\sim$\+User}} ()
+\item 
+void \mbox{\hyperlink{class_user_aca1de1bbf27b4be1918347aa66e8f4fa}{init}} (std\+::string s, std\+::string passw, std\+::string \mbox{\hyperlink{class_user_a5879b55fb02da531456549382aaac0d6}{access}})
+\item 
+void \mbox{\hyperlink{class_user_a1144a9645c6b203510e1c393c3d3a983}{log\+\_\+out}} (std\+::string s)
+\item 
+void \mbox{\hyperlink{class_user_aa3e1c727ff2e5eb53dcfc1551c792369}{init\+\_\+file}} (std\+::string filename)
+\item 
+std\+::ofstream \& \mbox{\hyperlink{class_user_afae8fc60081c8b38dab96eb3bb783808}{output}} (std\+::fstream file, \mbox{\hyperlink{class_user}{User}} u)
+\item 
+void \mbox{\hyperlink{class_user_a7e0dc89d7e738cd0945ed9860444feae}{add\+\_\+users}} (std\+::string filename, std\+::string str1, std\+::string str2)
+\item 
+void \mbox{\hyperlink{class_user_a915c5c410ce90f309c339991906a2249}{remove\+\_\+users}} (std\+::string filename, std\+::string str1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_user_aacbb807e514280f69e00bec7d71f3aee}{username}}
+\item 
+std\+::string \mbox{\hyperlink{class_user_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}}
+\item 
+std\+::string \mbox{\hyperlink{class_user_a5879b55fb02da531456549382aaac0d6}{access}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_user_abfd2064977baeebe206e5829564f580c}{names\+\_\+client}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_user_a689a22cc6178070b18bf796f2857d0ce}{names\+\_\+administrator}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_user_acff3ed70936215a31fedb1f6d45ae3e0}{all\+\_\+users}}
+\item 
+bool \mbox{\hyperlink{class_user_abbac252a62a1795942c6c8ec0a328f7f}{enter\+\_\+client}} = false
+\item 
+int \mbox{\hyperlink{class_user_a331b5878f75015cd0395ef2b25825f35}{reps}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+define class \mbox{\hyperlink{class_user}{User}} 
+
+Definition at line 6 of file user.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_user_a4a0137053e591fbb79d9057dd7d2283d}\label{class_user_a4a0137053e591fbb79d9057dd7d2283d}} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_af9e5f33114c8330be7b91276b7377e6d}\label{class_user_af9e5f33114c8330be7b91276b7377e6d}} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+Constructor of class \mbox{\hyperlink{class_user}{User}} 
+
+Definition at line 15 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_a6a9bb4f43e038c3b01ac3504a2767881}\label{class_user_a6a9bb4f43e038c3b01ac3504a2767881}} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}\item[{std\+::string}]{s,  }\item[{std\+::string}]{passw,  }\item[{std\+::string}]{type }\end{DoxyParamCaption})}
+
+The another constructor of class \mbox{\hyperlink{class_user}{User}} 
+
+Definition at line 11 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_ac00b72ad64eb4149f7b21b9f5468c2b2}\label{class_user_ac00b72ad64eb4149f7b21b9f5468c2b2}} 
+\index{User@{User}!````~User@{$\sim$User}}
+\index{````~User@{$\sim$User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{$\sim$User()}{~User()}}
+{\footnotesize\ttfamily User\+::$\sim$\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor of class \mbox{\hyperlink{class_user}{User}} 
+
+Definition at line 22 of file user.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_user_a7e0dc89d7e738cd0945ed9860444feae}\label{class_user_a7e0dc89d7e738cd0945ed9860444feae}} 
+\index{User@{User}!add\_users@{add\_users}}
+\index{add\_users@{add\_users}!User@{User}}
+\doxysubsubsection{\texorpdfstring{add\_users()}{add\_users()}}
+{\footnotesize\ttfamily void User\+::add\+\_\+users (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::string}]{str1,  }\item[{std\+::string}]{str2 }\end{DoxyParamCaption})}
+
+Output object method 
+
+Definition at line 69 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_aca1de1bbf27b4be1918347aa66e8f4fa}\label{class_user_aca1de1bbf27b4be1918347aa66e8f4fa}} 
+\index{User@{User}!init@{init}}
+\index{init@{init}!User@{User}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void User\+::init (\begin{DoxyParamCaption}\item[{std\+::string}]{s,  }\item[{std\+::string}]{passw,  }\item[{std\+::string}]{access }\end{DoxyParamCaption})}
+
+Destructor of class \mbox{\hyperlink{class_user}{User}} 
+
+Definition at line 32 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_aa3e1c727ff2e5eb53dcfc1551c792369}\label{class_user_aa3e1c727ff2e5eb53dcfc1551c792369}} 
+\index{User@{User}!init\_file@{init\_file}}
+\index{init\_file@{init\_file}!User@{User}}
+\doxysubsubsection{\texorpdfstring{init\_file()}{init\_file()}}
+{\footnotesize\ttfamily void User\+::init\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+The user logs out from system 
+
+Definition at line 48 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_a0a82c362b2bac37e8517cb377a60a51a}\label{class_user_a0a82c362b2bac37e8517cb377a60a51a}} 
+\index{User@{User}!log\_in@{log\_in}}
+\index{log\_in@{log\_in}!User@{User}}
+\doxysubsubsection{\texorpdfstring{log\_in()}{log\_in()}}
+{\footnotesize\ttfamily void User\+::log\+\_\+in (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{pasw }\end{DoxyParamCaption})}
+
+
+
+Definition at line 112 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_a1144a9645c6b203510e1c393c3d3a983}\label{class_user_a1144a9645c6b203510e1c393c3d3a983}} 
+\index{User@{User}!log\_out@{log\_out}}
+\index{log\_out@{log\_out}!User@{User}}
+\doxysubsubsection{\texorpdfstring{log\_out()}{log\_out()}}
+{\footnotesize\ttfamily void User\+::log\+\_\+out (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+Initialize an object of class \mbox{\hyperlink{class_user}{User}} 
+
+Definition at line 146 of file user.\+cpp.
+
+\mbox{\Hypertarget{class_user_afae8fc60081c8b38dab96eb3bb783808}\label{class_user_afae8fc60081c8b38dab96eb3bb783808}} 
+\index{User@{User}!output@{output}}
+\index{output@{output}!User@{User}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily std\+::ofstream\& User\+::output (\begin{DoxyParamCaption}\item[{std\+::fstream}]{file,  }\item[{\mbox{\hyperlink{class_user}{User}}}]{u }\end{DoxyParamCaption})}
+
+Initialize private members of the class from file \mbox{\Hypertarget{class_user_a915c5c410ce90f309c339991906a2249}\label{class_user_a915c5c410ce90f309c339991906a2249}} 
+\index{User@{User}!remove\_users@{remove\_users}}
+\index{remove\_users@{remove\_users}!User@{User}}
+\doxysubsubsection{\texorpdfstring{remove\_users()}{remove\_users()}}
+{\footnotesize\ttfamily void User\+::remove\+\_\+users (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::string}]{str1 }\end{DoxyParamCaption})}
+
+Add user in the system 
+
+Definition at line 88 of file user.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_user_a5879b55fb02da531456549382aaac0d6}\label{class_user_a5879b55fb02da531456549382aaac0d6}} 
+\index{User@{User}!access@{access}}
+\index{access@{access}!User@{User}}
+\doxysubsubsection{\texorpdfstring{access}{access}}
+{\footnotesize\ttfamily std\+::string User\+::access\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 16 of file user.\+h.
+
+\mbox{\Hypertarget{class_user_acff3ed70936215a31fedb1f6d45ae3e0}\label{class_user_acff3ed70936215a31fedb1f6d45ae3e0}} 
+\index{User@{User}!all\_users@{all\_users}}
+\index{all\_users@{all\_users}!User@{User}}
+\doxysubsubsection{\texorpdfstring{all\_users}{all\_users}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ User\+::all\+\_\+users\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file user.\+h.
+
+\mbox{\Hypertarget{class_user_abbac252a62a1795942c6c8ec0a328f7f}\label{class_user_abbac252a62a1795942c6c8ec0a328f7f}} 
+\index{User@{User}!enter\_client@{enter\_client}}
+\index{enter\_client@{enter\_client}!User@{User}}
+\doxysubsubsection{\texorpdfstring{enter\_client}{enter\_client}}
+{\footnotesize\ttfamily bool User\+::enter\+\_\+client = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 20 of file user.\+h.
+
+\mbox{\Hypertarget{class_user_a689a22cc6178070b18bf796f2857d0ce}\label{class_user_a689a22cc6178070b18bf796f2857d0ce}} 
+\index{User@{User}!names\_administrator@{names\_administrator}}
+\index{names\_administrator@{names\_administrator}!User@{User}}
+\doxysubsubsection{\texorpdfstring{names\_administrator}{names\_administrator}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ User\+::names\+\_\+administrator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 18 of file user.\+h.
+
+\mbox{\Hypertarget{class_user_abfd2064977baeebe206e5829564f580c}\label{class_user_abfd2064977baeebe206e5829564f580c}} 
+\index{User@{User}!names\_client@{names\_client}}
+\index{names\_client@{names\_client}!User@{User}}
+\doxysubsubsection{\texorpdfstring{names\_client}{names\_client}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ User\+::names\+\_\+client\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 17 of file user.\+h.
+
+\mbox{\Hypertarget{class_user_ac2f2e75b15e8eb6cbb030fc85a6cd59f}\label{class_user_ac2f2e75b15e8eb6cbb030fc85a6cd59f}} 
+\index{User@{User}!password@{password}}
+\index{password@{password}!User@{User}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily std\+::string User\+::password\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 15 of file user.\+h.
+
+\mbox{\Hypertarget{class_user_a331b5878f75015cd0395ef2b25825f35}\label{class_user_a331b5878f75015cd0395ef2b25825f35}} 
+\index{User@{User}!reps@{reps}}
+\index{reps@{reps}!User@{User}}
+\doxysubsubsection{\texorpdfstring{reps}{reps}}
+{\footnotesize\ttfamily int User\+::reps = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 21 of file user.\+h.
+
+\mbox{\Hypertarget{class_user_aacbb807e514280f69e00bec7d71f3aee}\label{class_user_aacbb807e514280f69e00bec7d71f3aee}} 
+\index{User@{User}!username@{username}}
+\index{username@{username}!User@{User}}
+\doxysubsubsection{\texorpdfstring{username}{username}}
+{\footnotesize\ttfamily std\+::string User\+::username\hspace{0.3cm}{\ttfamily [private]}}
+
+Private members of class \mbox{\hyperlink{class_user}{User}} 
+
+Definition at line 14 of file user.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/home/\+Desktop/course\+\_\+project2/\mbox{\hyperlink{user_8h}{user.\+h}}\item 
+C\+:/\+Users/home/\+Desktop/course\+\_\+project2/\mbox{\hyperlink{user_8cpp}{user.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,424 @@
+\hypertarget{class_book}{}\doxysection{Book Class Reference}
+\label{class_book}\index{Book@{Book}}
+
+
+{\ttfamily \#include $<$book.\+h$>$}
+
+Inheritance diagram for Book\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_book}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_book_a2eac9e235a08763158f78533f7a83e1f}{Book}} ()
+\item 
+\mbox{\hyperlink{class_book_a0ba8eceb34ea1301bc08942e37824767}{$\sim$\+Book}} ()
+\item 
+\mbox{\hyperlink{class_book_ad46ee0d758962624ed7658412ef6b57c}{Book}} (std\+::string s1, std\+::string s2, std\+::string s3, std\+::string s4, std\+::string s5, std\+::string s6, std\+::string s7, std\+::string s8)
+\item 
+void \mbox{\hyperlink{class_book_a90ffe2f80658fd8992fcdb2e1472a5eb}{book\+\_\+add}} (std\+::string s, std\+::string s1, std\+::string s2, std\+::string s3, std\+::string s4, std\+::string s5, std\+::string s6, std\+::string s7, std\+::string s8)
+\item 
+void \mbox{\hyperlink{class_book_a819e4785ea1b9ea637b102eb819a2c9a}{init\+\_\+book}} (std\+::string s1, std\+::string s2, std\+::string s3, std\+::string s4, std\+::string s5, std\+::string s6, std\+::string s7, std\+::string s8)
+\item 
+void \mbox{\hyperlink{class_book_a0e07e11481a20624011fc8b60b3f5815}{init\+\_\+file\+\_\+book}} (std\+::string filename)
+\item 
+\mbox{\hyperlink{class_book_a8fc9437b6ade8c6adb141518c1df4aef}{Book}} (std\+::string filename)
+\item 
+void \mbox{\hyperlink{class_book_a8655d80b979c70bca8c9ae48f3e09bdc}{book\+\_\+info}} (std\+::string filename, std\+::string I\+S\+BN)
+\item 
+void \mbox{\hyperlink{class_book_ad6720f5f35657ac36d635ee3e7478e77}{books\+\_\+find}} (std\+::string filename, std\+::string s1, std\+::string s2)
+\item 
+void \mbox{\hyperlink{class_book_a972a3438dc15fbbc06fd0717f9be01d5}{books\+\_\+sort}} (std\+::string filename, std\+::string s1, std\+::string s2)
+\item 
+void \mbox{\hyperlink{class_book_ac64844c31aab2d6f07f640561a77dc04}{remove\+\_\+book}} (std\+::string filename, std\+::string \mbox{\hyperlink{class_book_af2e58fdc67a5ed97d213ba4834b00e9e}{title}})
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_book_a3f0096538f844c78c2b8add7c231f64c}{sort\+\_\+asc}} (std\+::vector$<$ std\+::string $>$ v)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_book_a92d2fe993cc8352c86020ba4c7e0f30d}{sort\+\_\+desc}} (std\+::vector$<$ std\+::string $>$ v)
+\item 
+void \mbox{\hyperlink{class_book_ab34817755564ff7a801dfedf6c327c95}{books\+\_\+all}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_book_ae857bda17512bebaa382f9d5d8706a42}{copy}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_book_a7e1f0966c227ccaaf8e76fa56226888f}{author}}
+\item 
+std\+::string \mbox{\hyperlink{class_book_af2e58fdc67a5ed97d213ba4834b00e9e}{title}}
+\item 
+std\+::string \mbox{\hyperlink{class_book_afef15d32b7d2910e30538d8bec723f93}{genre}}
+\item 
+std\+::string \mbox{\hyperlink{class_book_a3df5b8c2fc9e8df69ffd084e5238d6a5}{description}}
+\item 
+std\+::string \mbox{\hyperlink{class_book_ad96344616a75e0c0e5c8997606aa1a4e}{year\+\_\+published}}
+\item 
+std\+::string \mbox{\hyperlink{class_book_a5cc7e57cfceda482faa89e96da7a83d6}{key\+\_\+words}}
+\item 
+std\+::string \mbox{\hyperlink{class_book_a68f963518f4cda2dc9c727360149a7e6}{rating}}
+\item 
+std\+::string \mbox{\hyperlink{class_book_a4801ef77b3878e363935f09ebb15a213}{isbn}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_book_a5f1e39cd2d76d4cc5885513a01e7073f}{save}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_book_a965020082b565a8021656f4e5c2c0ed5}{all\+\_\+content}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_book_a0b768d7dd8bb2ba7b22ea16ea6bae8ac}{ibn}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_book_a069f867877559188e83d989acdaf3719}{title\+\_\+}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_book_a15ad67df6a2d3b6aa75123fdedf3236e}{author\+\_\+}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_book_a628e6d1a693a465de264952cca908f51}{tag\+\_\+}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_book_ad81a4ba84060cfb07e303b70c71b6bb4}{year\+\_\+}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_book_ad41aa69e3fdab2670967a6246079c3ee}{rating\+\_\+}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_book_a5a2280211788b70eacf166525dfa23be}{all\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+define class \mbox{\hyperlink{class_book}{Book}} 
+
+Definition at line 3 of file book.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_book_a2eac9e235a08763158f78533f7a83e1f}\label{class_book_a2eac9e235a08763158f78533f7a83e1f}} 
+\index{Book@{Book}!Book@{Book}}
+\index{Book@{Book}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{Book()}{Book()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Book\+::\+Book (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Save author,title,genre and rating of books from the library 
+
+Definition at line 7 of file book.\+cpp.
+
+\mbox{\Hypertarget{class_book_a0ba8eceb34ea1301bc08942e37824767}\label{class_book_a0ba8eceb34ea1301bc08942e37824767}} 
+\index{Book@{Book}!````~Book@{$\sim$Book}}
+\index{````~Book@{$\sim$Book}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{$\sim$Book()}{~Book()}}
+{\footnotesize\ttfamily Book\+::$\sim$\+Book (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor of class \mbox{\hyperlink{class_book}{Book}} 
+
+Definition at line 11 of file book.\+cpp.
+
+\mbox{\Hypertarget{class_book_ad46ee0d758962624ed7658412ef6b57c}\label{class_book_ad46ee0d758962624ed7658412ef6b57c}} 
+\index{Book@{Book}!Book@{Book}}
+\index{Book@{Book}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{Book()}{Book()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Book\+::\+Book (\begin{DoxyParamCaption}\item[{std\+::string}]{s1,  }\item[{std\+::string}]{s2,  }\item[{std\+::string}]{s3,  }\item[{std\+::string}]{s4,  }\item[{std\+::string}]{s5,  }\item[{std\+::string}]{s6,  }\item[{std\+::string}]{s7,  }\item[{std\+::string}]{s8 }\end{DoxyParamCaption})}
+
+Destructor of class \mbox{\hyperlink{class_book}{Book}} 
+
+Definition at line 31 of file book.\+cpp.
+
+\mbox{\Hypertarget{class_book_a8fc9437b6ade8c6adb141518c1df4aef}\label{class_book_a8fc9437b6ade8c6adb141518c1df4aef}} 
+\index{Book@{Book}!Book@{Book}}
+\index{Book@{Book}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{Book()}{Book()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Book\+::\+Book (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+Read file and save its current indormation in string 
+
+Definition at line 35 of file book.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_book_a90ffe2f80658fd8992fcdb2e1472a5eb}\label{class_book_a90ffe2f80658fd8992fcdb2e1472a5eb}} 
+\index{Book@{Book}!book\_add@{book\_add}}
+\index{book\_add@{book\_add}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{book\_add()}{book\_add()}}
+{\footnotesize\ttfamily void Book\+::book\+\_\+add (\begin{DoxyParamCaption}\item[{std\+::string}]{s,  }\item[{std\+::string}]{s1,  }\item[{std\+::string}]{s2,  }\item[{std\+::string}]{s3,  }\item[{std\+::string}]{s4,  }\item[{std\+::string}]{s5,  }\item[{std\+::string}]{s6,  }\item[{std\+::string}]{s7,  }\item[{std\+::string}]{s8 }\end{DoxyParamCaption})}
+
+The another constructor of class \mbox{\hyperlink{class_book}{Book}} 
+
+Definition at line 40 of file book.\+cpp.
+
+\mbox{\Hypertarget{class_book_a8655d80b979c70bca8c9ae48f3e09bdc}\label{class_book_a8655d80b979c70bca8c9ae48f3e09bdc}} 
+\index{Book@{Book}!book\_info@{book\_info}}
+\index{book\_info@{book\_info}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{book\_info()}{book\_info()}}
+{\footnotesize\ttfamily void Book\+::book\+\_\+info (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::string}]{I\+S\+BN }\end{DoxyParamCaption})}
+
+
+
+Definition at line 275 of file book.\+cpp.
+
+\mbox{\Hypertarget{class_book_ab34817755564ff7a801dfedf6c327c95}\label{class_book_ab34817755564ff7a801dfedf6c327c95}} 
+\index{Book@{Book}!books\_all@{books\_all}}
+\index{books\_all@{books\_all}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{books\_all()}{books\_all()}}
+{\footnotesize\ttfamily void Book\+::books\+\_\+all (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Method for desc sort of vector$<$string$>$ 
+
+Definition at line 174 of file book.\+cpp.
+
+\mbox{\Hypertarget{class_book_ad6720f5f35657ac36d635ee3e7478e77}\label{class_book_ad6720f5f35657ac36d635ee3e7478e77}} 
+\index{Book@{Book}!books\_find@{books\_find}}
+\index{books\_find@{books\_find}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{books\_find()}{books\_find()}}
+{\footnotesize\ttfamily void Book\+::books\+\_\+find (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::string}]{s1,  }\item[{std\+::string}]{s2 }\end{DoxyParamCaption})}
+
+Print whole infor about book 
+
+Definition at line 294 of file book.\+cpp.
+
+\mbox{\Hypertarget{class_book_a972a3438dc15fbbc06fd0717f9be01d5}\label{class_book_a972a3438dc15fbbc06fd0717f9be01d5}} 
+\index{Book@{Book}!books\_sort@{books\_sort}}
+\index{books\_sort@{books\_sort}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{books\_sort()}{books\_sort()}}
+{\footnotesize\ttfamily void Book\+::books\+\_\+sort (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::string}]{s1,  }\item[{std\+::string}]{s2 }\end{DoxyParamCaption})}
+
+Find book in library 
+
+Definition at line 370 of file book.\+cpp.
+
+\mbox{\Hypertarget{class_book_ae857bda17512bebaa382f9d5d8706a42}\label{class_book_ae857bda17512bebaa382f9d5d8706a42}} 
+\index{Book@{Book}!copy@{copy}}
+\index{copy@{copy}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily std\+::string Book\+::copy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Print info about book 
+
+Definition at line 183 of file book.\+cpp.
+
+\mbox{\Hypertarget{class_book_a819e4785ea1b9ea637b102eb819a2c9a}\label{class_book_a819e4785ea1b9ea637b102eb819a2c9a}} 
+\index{Book@{Book}!init\_book@{init\_book}}
+\index{init\_book@{init\_book}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{init\_book()}{init\_book()}}
+{\footnotesize\ttfamily void Book\+::init\+\_\+book (\begin{DoxyParamCaption}\item[{std\+::string}]{s1,  }\item[{std\+::string}]{s2,  }\item[{std\+::string}]{s3,  }\item[{std\+::string}]{s4,  }\item[{std\+::string}]{s5,  }\item[{std\+::string}]{s6,  }\item[{std\+::string}]{s7,  }\item[{std\+::string}]{s8 }\end{DoxyParamCaption})}
+
+This method adds book in library 
+
+Definition at line 192 of file book.\+cpp.
+
+\mbox{\Hypertarget{class_book_a0e07e11481a20624011fc8b60b3f5815}\label{class_book_a0e07e11481a20624011fc8b60b3f5815}} 
+\index{Book@{Book}!init\_file\_book@{init\_file\_book}}
+\index{init\_file\_book@{init\_file\_book}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{init\_file\_book()}{init\_file\_book()}}
+{\footnotesize\ttfamily void Book\+::init\+\_\+file\+\_\+book (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+The method initialize object from class \mbox{\hyperlink{class_book}{Book}} 
+
+Definition at line 206 of file book.\+cpp.
+
+\mbox{\Hypertarget{class_book_ac64844c31aab2d6f07f640561a77dc04}\label{class_book_ac64844c31aab2d6f07f640561a77dc04}} 
+\index{Book@{Book}!remove\_book@{remove\_book}}
+\index{remove\_book@{remove\_book}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{remove\_book()}{remove\_book()}}
+{\footnotesize\ttfamily void Book\+::remove\+\_\+book (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::string}]{title }\end{DoxyParamCaption})}
+
+Sort all books in library (desc and asc sort) 
+
+Definition at line 147 of file book.\+cpp.
+
+\mbox{\Hypertarget{class_book_a3f0096538f844c78c2b8add7c231f64c}\label{class_book_a3f0096538f844c78c2b8add7c231f64c}} 
+\index{Book@{Book}!sort\_asc@{sort\_asc}}
+\index{sort\_asc@{sort\_asc}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{sort\_asc()}{sort\_asc()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Book\+::sort\+\_\+asc (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{v }\end{DoxyParamCaption})}
+
+Remove book from library 
+
+Definition at line 113 of file book.\+cpp.
+
+\mbox{\Hypertarget{class_book_a92d2fe993cc8352c86020ba4c7e0f30d}\label{class_book_a92d2fe993cc8352c86020ba4c7e0f30d}} 
+\index{Book@{Book}!sort\_desc@{sort\_desc}}
+\index{sort\_desc@{sort\_desc}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{sort\_desc()}{sort\_desc()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Book\+::sort\+\_\+desc (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{v }\end{DoxyParamCaption})}
+
+Method for asc sort of vector$<$string$>$ 
+
+Definition at line 130 of file book.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_book_a5a2280211788b70eacf166525dfa23be}\label{class_book_a5a2280211788b70eacf166525dfa23be}} 
+\index{Book@{Book}!all\_@{all\_}}
+\index{all\_@{all\_}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{all\_}{all\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Book\+::all\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Save the rating of books from the library 
+
+Definition at line 51 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_a965020082b565a8021656f4e5c2c0ed5}\label{class_book_a965020082b565a8021656f4e5c2c0ed5}} 
+\index{Book@{Book}!all\_content@{all\_content}}
+\index{all\_content@{all\_content}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{all\_content}{all\_content}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Book\+::all\+\_\+content\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 20 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_a7e1f0966c227ccaaf8e76fa56226888f}\label{class_book_a7e1f0966c227ccaaf8e76fa56226888f}} 
+\index{Book@{Book}!author@{author}}
+\index{author@{author}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{author}{author}}
+{\footnotesize\ttfamily std\+::string Book\+::author\hspace{0.3cm}{\ttfamily [private]}}
+
+Private members of class \mbox{\hyperlink{class_book}{Book}} 
+
+Definition at line 11 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_a15ad67df6a2d3b6aa75123fdedf3236e}\label{class_book_a15ad67df6a2d3b6aa75123fdedf3236e}} 
+\index{Book@{Book}!author\_@{author\_}}
+\index{author\_@{author\_}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{author\_}{author\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Book\+::author\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Save the titles of books from the library 
+
+Definition at line 35 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_a3df5b8c2fc9e8df69ffd084e5238d6a5}\label{class_book_a3df5b8c2fc9e8df69ffd084e5238d6a5}} 
+\index{Book@{Book}!description@{description}}
+\index{description@{description}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily std\+::string Book\+::description\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 14 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_afef15d32b7d2910e30538d8bec723f93}\label{class_book_afef15d32b7d2910e30538d8bec723f93}} 
+\index{Book@{Book}!genre@{genre}}
+\index{genre@{genre}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{genre}{genre}}
+{\footnotesize\ttfamily std\+::string Book\+::genre\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 13 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_a0b768d7dd8bb2ba7b22ea16ea6bae8ac}\label{class_book_a0b768d7dd8bb2ba7b22ea16ea6bae8ac}} 
+\index{Book@{Book}!ibn@{ibn}}
+\index{ibn@{ibn}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{ibn}{ibn}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Book\+::ibn\hspace{0.3cm}{\ttfamily [private]}}
+
+Save all information about the books from the library 
+
+Definition at line 25 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_a4801ef77b3878e363935f09ebb15a213}\label{class_book_a4801ef77b3878e363935f09ebb15a213}} 
+\index{Book@{Book}!isbn@{isbn}}
+\index{isbn@{isbn}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{isbn}{isbn}}
+{\footnotesize\ttfamily std\+::string Book\+::isbn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 18 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_a5cc7e57cfceda482faa89e96da7a83d6}\label{class_book_a5cc7e57cfceda482faa89e96da7a83d6}} 
+\index{Book@{Book}!key\_words@{key\_words}}
+\index{key\_words@{key\_words}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{key\_words}{key\_words}}
+{\footnotesize\ttfamily std\+::string Book\+::key\+\_\+words\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 16 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_a68f963518f4cda2dc9c727360149a7e6}\label{class_book_a68f963518f4cda2dc9c727360149a7e6}} 
+\index{Book@{Book}!rating@{rating}}
+\index{rating@{rating}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{rating}{rating}}
+{\footnotesize\ttfamily std\+::string Book\+::rating\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 17 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_ad41aa69e3fdab2670967a6246079c3ee}\label{class_book_ad41aa69e3fdab2670967a6246079c3ee}} 
+\index{Book@{Book}!rating\_@{rating\_}}
+\index{rating\_@{rating\_}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{rating\_}{rating\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Book\+::rating\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Save the published\+\_\+year of books from the library 
+
+Definition at line 47 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_a5f1e39cd2d76d4cc5885513a01e7073f}\label{class_book_a5f1e39cd2d76d4cc5885513a01e7073f}} 
+\index{Book@{Book}!save@{save}}
+\index{save@{save}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{save}{save}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Book\+::save\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_a628e6d1a693a465de264952cca908f51}\label{class_book_a628e6d1a693a465de264952cca908f51}} 
+\index{Book@{Book}!tag\_@{tag\_}}
+\index{tag\_@{tag\_}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{tag\_}{tag\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Book\+::tag\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Save the authors of books from the library 
+
+Definition at line 39 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_af2e58fdc67a5ed97d213ba4834b00e9e}\label{class_book_af2e58fdc67a5ed97d213ba4834b00e9e}} 
+\index{Book@{Book}!title@{title}}
+\index{title@{title}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily std\+::string Book\+::title\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 12 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_a069f867877559188e83d989acdaf3719}\label{class_book_a069f867877559188e83d989acdaf3719}} 
+\index{Book@{Book}!title\_@{title\_}}
+\index{title\_@{title\_}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{title\_}{title\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Book\+::title\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Save the isbn of books from the library 
+
+Definition at line 30 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_ad81a4ba84060cfb07e303b70c71b6bb4}\label{class_book_ad81a4ba84060cfb07e303b70c71b6bb4}} 
+\index{Book@{Book}!year\_@{year\_}}
+\index{year\_@{year\_}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{year\_}{year\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Book\+::year\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+Save the key\+\_\+words info of books from the library 
+
+Definition at line 43 of file book.\+h.
+
+\mbox{\Hypertarget{class_book_ad96344616a75e0c0e5c8997606aa1a4e}\label{class_book_ad96344616a75e0c0e5c8997606aa1a4e}} 
+\index{Book@{Book}!year\_published@{year\_published}}
+\index{year\_published@{year\_published}!Book@{Book}}
+\doxysubsubsection{\texorpdfstring{year\_published}{year\_published}}
+{\footnotesize\ttfamily std\+::string Book\+::year\+\_\+published\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 15 of file book.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/home/\+Desktop/course\+\_\+project2/\mbox{\hyperlink{book_8h}{book.\+h}}\item 
+C\+:/\+Users/home/\+Desktop/course\+\_\+project2/\mbox{\hyperlink{book_8cpp}{book.\+cpp}}\end{DoxyCompactItemize}

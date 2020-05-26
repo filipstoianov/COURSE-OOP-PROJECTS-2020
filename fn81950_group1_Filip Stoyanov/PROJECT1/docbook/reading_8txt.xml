@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_reading_8txt">
+<title>PROJECT1/reading.txt File Reference</title>
+<indexterm><primary>PROJECT1/reading.txt</primary></indexterm>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_reading_8txt_1a23b431acfeb41e15d466d75de822307c">hello</link></para>
+</listitem>
+            <listitem><para><link linkend="_reading_8txt_1a46a1998e8caf29d775ca749a64105249">fitness</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_reading_8txt_1a46a1998e8caf29d775ca749a64105249"/>    <section>
+    <title>fitness</title>
+<indexterm><primary>fitness</primary><secondary>reading.txt</secondary></indexterm>
+<indexterm><primary>reading.txt</primary><secondary>fitness</secondary></indexterm>
+<para><computeroutput>fitness</computeroutput></para><para>
+Definition at line 1 of file reading.txt.</para>
+    </section><anchor xml:id="_reading_8txt_1a23b431acfeb41e15d466d75de822307c"/>    <section>
+    <title>hello</title>
+<indexterm><primary>hello</primary><secondary>reading.txt</secondary></indexterm>
+<indexterm><primary>reading.txt</primary><secondary>hello</secondary></indexterm>
+<para><computeroutput>hello</computeroutput></para><para>
+Definition at line 1 of file reading.txt.</para>
+</section>
+</section>
+</section>

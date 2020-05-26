@@ -1,0 +1,16 @@
+Author:Steven King
+Title:Harry Potter
+Genre:Fantasy
+Description:Interesting book
+Year:2010
+Key_words:fantasy,action
+Rating:10.10
+ISBN:100
+Author:Ivan Vazov 
+Title:Pod igoto
+Genre:history
+Description:amazing book
+Year:1965
+Key_words:drama,action
+Rating:8
+ISBN:110

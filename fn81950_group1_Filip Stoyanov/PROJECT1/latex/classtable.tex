@@ -1,0 +1,411 @@
+\hypertarget{classtable}{}\doxysection{table Class Reference}
+\label{classtable}\index{table@{table}}
+
+
+{\ttfamily \#include $<$table.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtable_abba3ea52658e29d833ed1bcb2a5b7cc4}{table}} ()
+\item 
+\mbox{\hyperlink{classtable_ae1800c1039fc2dddb84b3e315c94e371}{table}} (std\+::string str\+\_\+new)
+\item 
+\mbox{\hyperlink{classtable_a314d9cf6ee35be9ac221982599a57d8d}{$\sim$table}} ()
+\item 
+std\+::string \mbox{\hyperlink{classtable_a00aacb2f10e14ba223950ac75cfdb7e1}{call\+\_\+to}} (int conter\+\_\+cell)
+\item 
+int \mbox{\hyperlink{classtable_a974540609d16008cede77fa6570d2c6a}{point}} (std\+::string s)
+\item 
+int \mbox{\hyperlink{classtable_aa6666bb1d464831573d7341aed6c9d36}{line}} ()
+\item 
+void \mbox{\hyperlink{classtable_abea63c517192e79c95dceaa0e47dc89e}{empty}} ()
+\item 
+void \mbox{\hyperlink{classtable_aaee7ed67b892540c962ac2df0732aad0}{formula2}} (std\+::string input, std\+::string cell)
+\item 
+int \mbox{\hyperlink{classtable_a9a222c56821f53ae9cfe44049033a283}{position\+\_\+of\+\_\+cell}} (std\+::string cell\+\_\+ind)
+\item 
+void \mbox{\hyperlink{classtable_a1e5343ee0fc874564822923d2548b3a0}{max\+\_\+len}} ()
+\item 
+void \mbox{\hyperlink{classtable_aa23acfd1866ac6650e0c3353bbd52cbd}{is\+\_\+valid}} ()
+\item 
+std\+::string \mbox{\hyperlink{classtable_ac4064378c3c5c4fa747dc0c9ab392499}{convert\+\_\+again}} (double degree)
+\item 
+double \mbox{\hyperlink{classtable_ab5371b618bb9ba262de24c55e2d7417e}{convert\+\_\+string}} (std\+::string s)
+\item 
+void \mbox{\hyperlink{classtable_abce66815cb07fd10c615eeb226b36083}{change\+\_\+value}} (std\+::string new\+\_\+str, std\+::string cell\+\_\+str)
+\item 
+double \mbox{\hyperlink{classtable_aceefaa77e7961390a5e97ef4e9fd5136}{formula\+\_\+degree}} (std\+::string \mbox{\hyperlink{classtable_a9d777c0e0db5b57b9a929f05f44bfa71}{str}})
+\item 
+void \mbox{\hyperlink{classtable_a0470d9ac377bc23ef61cdf66b76f5479}{check\+\_\+for}} ()
+\item 
+int \mbox{\hyperlink{classtable_a7fa96bb4eca43b07e4f3b89c46a669bf}{count\+\_\+symbol1}} (std\+::string s)
+\item 
+int \mbox{\hyperlink{classtable_a65ca0d70341c7edad4a0383f0fa72dfb}{count\+\_\+symbol2}} ()
+\item 
+void \mbox{\hyperlink{classtable_a482d9962c110d608f51cbe7366d3e87a}{formula}} (std\+::string input, std\+::string cell)
+\item 
+bool \mbox{\hyperlink{classtable_a6b2ae5a1029e14c3d6f6ed1cf22bf646}{is\+\_\+digit}} (std\+::string \mbox{\hyperlink{classtable_a9d777c0e0db5b57b9a929f05f44bfa71}{str}})
+\item 
+std\+::string \mbox{\hyperlink{classtable_ae6c94b4f393de18bfb8ee61db749bbd2}{copy}} ()
+\item 
+void \mbox{\hyperlink{classtable_a87f6de0a6d05c8caf3090156e1ab3aab}{print}} ()
+\item 
+void \mbox{\hyperlink{classtable_a2e5a376f26645c8b1e7151ae8e1adaad}{init\+\_\+file}} (std\+::string filename)
+\item 
+void \mbox{\hyperlink{classtable_a8af051416887ce28d1be8de98a429a56}{save\+\_\+file}} (std\+::fstream new\+\_\+file, char $\ast$filename)
+\item 
+void \mbox{\hyperlink{classtable_a6c979e3e7a9324b39f176f6c50681c34}{init\+\_\+index}} ()
+\item 
+void \mbox{\hyperlink{classtable_a440a5ba1d76f6fb07f7d6100600ce914}{insert\+\_\+to}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classtable_a9d777c0e0db5b57b9a929f05f44bfa71}{str}}
+\item 
+int $\ast$ \mbox{\hyperlink{classtable_abe24b80ffe4ee8d937c92581e5b9e507}{index}} = (int$\ast$)(malloc(sizeof(int)))
+\item 
+int \mbox{\hyperlink{classtable_af4f5301263efa135b04402327565ae3f}{size}} = 0
+\item 
+int \mbox{\hyperlink{classtable_ad0d0a085668cb1bc3226a7d1dc655094}{max\+\_\+rps}} = 0
+\item 
+int \mbox{\hyperlink{classtable_a394c50cbceb44fa39434ba2b7fb4c987}{max\+\_\+word}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 8 of file table.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtable_abba3ea52658e29d833ed1bcb2a5b7cc4}\label{classtable_abba3ea52658e29d833ed1bcb2a5b7cc4}} 
+\index{table@{table}!table@{table}}
+\index{table@{table}!table@{table}}
+\doxysubsubsection{\texorpdfstring{table()}{table()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily table\+::table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+All methods used in this prrogram 
+
+Definition at line 3 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_ae1800c1039fc2dddb84b3e315c94e371}\label{classtable_ae1800c1039fc2dddb84b3e315c94e371}} 
+\index{table@{table}!table@{table}}
+\index{table@{table}!table@{table}}
+\doxysubsubsection{\texorpdfstring{table()}{table()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily table\+::table (\begin{DoxyParamCaption}\item[{std\+::string}]{str\+\_\+new }\end{DoxyParamCaption})}
+
+The constructor of class table 
+
+Definition at line 16 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a314d9cf6ee35be9ac221982599a57d8d}\label{classtable_a314d9cf6ee35be9ac221982599a57d8d}} 
+\index{table@{table}!````~table@{$\sim$table}}
+\index{````~table@{$\sim$table}!table@{table}}
+\doxysubsubsection{\texorpdfstring{$\sim$table()}{~table()}}
+{\footnotesize\ttfamily table\+::$\sim$table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The another constructor of class table 
+
+Definition at line 24 of file table.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtable_a00aacb2f10e14ba223950ac75cfdb7e1}\label{classtable_a00aacb2f10e14ba223950ac75cfdb7e1}} 
+\index{table@{table}!call\_to@{call\_to}}
+\index{call\_to@{call\_to}!table@{table}}
+\doxysubsubsection{\texorpdfstring{call\_to()}{call\_to()}}
+{\footnotesize\ttfamily std\+::string table\+::call\+\_\+to (\begin{DoxyParamCaption}\item[{int}]{conter\+\_\+cell }\end{DoxyParamCaption})}
+
+The destructor of class table 
+
+Definition at line 347 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_abce66815cb07fd10c615eeb226b36083}\label{classtable_abce66815cb07fd10c615eeb226b36083}} 
+\index{table@{table}!change\_value@{change\_value}}
+\index{change\_value@{change\_value}!table@{table}}
+\doxysubsubsection{\texorpdfstring{change\_value()}{change\_value()}}
+{\footnotesize\ttfamily void table\+::change\+\_\+value (\begin{DoxyParamCaption}\item[{std\+::string}]{new\+\_\+str,  }\item[{std\+::string}]{cell\+\_\+number }\end{DoxyParamCaption})}
+
+Convert type \char`\"{}string\char`\"{} to type \char`\"{}double\char`\"{}
+
+Take value of this cell 
+
+Definition at line 365 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a0470d9ac377bc23ef61cdf66b76f5479}\label{classtable_a0470d9ac377bc23ef61cdf66b76f5479}} 
+\index{table@{table}!check\_for@{check\_for}}
+\index{check\_for@{check\_for}!table@{table}}
+\doxysubsubsection{\texorpdfstring{check\_for()}{check\_for()}}
+{\footnotesize\ttfamily void table\+::check\+\_\+for (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 294 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_ac4064378c3c5c4fa747dc0c9ab392499}\label{classtable_ac4064378c3c5c4fa747dc0c9ab392499}} 
+\index{table@{table}!convert\_again@{convert\_again}}
+\index{convert\_again@{convert\_again}!table@{table}}
+\doxysubsubsection{\texorpdfstring{convert\_again()}{convert\_again()}}
+{\footnotesize\ttfamily std\+::string table\+::convert\+\_\+again (\begin{DoxyParamCaption}\item[{double}]{degree }\end{DoxyParamCaption})}
+
+
+
+Definition at line 86 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_ab5371b618bb9ba262de24c55e2d7417e}\label{classtable_ab5371b618bb9ba262de24c55e2d7417e}} 
+\index{table@{table}!convert\_string@{convert\_string}}
+\index{convert\_string@{convert\_string}!table@{table}}
+\doxysubsubsection{\texorpdfstring{convert\_string()}{convert\_string()}}
+{\footnotesize\ttfamily double table\+::convert\+\_\+string (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+Convert type \char`\"{}double\char`\"{} to type \char`\"{}string\char`\"{} 
+
+Definition at line 78 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_ae6c94b4f393de18bfb8ee61db749bbd2}\label{classtable_ae6c94b4f393de18bfb8ee61db749bbd2}} 
+\index{table@{table}!copy@{copy}}
+\index{copy@{copy}!table@{table}}
+\doxysubsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily std\+::string table\+::copy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Check for whether it is number 
+
+Definition at line 701 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a7fa96bb4eca43b07e4f3b89c46a669bf}\label{classtable_a7fa96bb4eca43b07e4f3b89c46a669bf}} 
+\index{table@{table}!count\_symbol1@{count\_symbol1}}
+\index{count\_symbol1@{count\_symbol1}!table@{table}}
+\doxysubsubsection{\texorpdfstring{count\_symbol1()}{count\_symbol1()}}
+{\footnotesize\ttfamily int table\+::count\+\_\+symbol1 (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+Check for valid type 
+
+Definition at line 94 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a65ca0d70341c7edad4a0383f0fa72dfb}\label{classtable_a65ca0d70341c7edad4a0383f0fa72dfb}} 
+\index{table@{table}!count\_symbol2@{count\_symbol2}}
+\index{count\_symbol2@{count\_symbol2}!table@{table}}
+\doxysubsubsection{\texorpdfstring{count\_symbol2()}{count\_symbol2()}}
+{\footnotesize\ttfamily int table\+::count\+\_\+symbol2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Count the \textquotesingle{}$\vert$\textquotesingle{} symbols in \char`\"{}str\char`\"{}\textquotesingle{} 
+
+Definition at line 107 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_abea63c517192e79c95dceaa0e47dc89e}\label{classtable_abea63c517192e79c95dceaa0e47dc89e}} 
+\index{table@{table}!empty@{empty}}
+\index{empty@{empty}!table@{table}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily void table\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return number of lines in the current table 
+
+Definition at line 57 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a482d9962c110d608f51cbe7366d3e87a}\label{classtable_a482d9962c110d608f51cbe7366d3e87a}} 
+\index{table@{table}!formula@{formula}}
+\index{formula@{formula}!table@{table}}
+\doxysubsubsection{\texorpdfstring{formula()}{formula()}}
+{\footnotesize\ttfamily void table\+::formula (\begin{DoxyParamCaption}\item[{std\+::string}]{input,  }\item[{std\+::string}]{cell }\end{DoxyParamCaption})}
+
+Count the number of lines in \char`\"{}str\char`\"{} 
+
+Definition at line 405 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_aaee7ed67b892540c962ac2df0732aad0}\label{classtable_aaee7ed67b892540c962ac2df0732aad0}} 
+\index{table@{table}!formula2@{formula2}}
+\index{formula2@{formula2}!table@{table}}
+\doxysubsubsection{\texorpdfstring{formula2()}{formula2()}}
+{\footnotesize\ttfamily void table\+::formula2 (\begin{DoxyParamCaption}\item[{std\+::string}]{input,  }\item[{std\+::string}]{cell }\end{DoxyParamCaption})}
+
+Delete content of the string \char`\"{}str\char`\"{} 
+
+Definition at line 570 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_aceefaa77e7961390a5e97ef4e9fd5136}\label{classtable_aceefaa77e7961390a5e97ef4e9fd5136}} 
+\index{table@{table}!formula\_degree@{formula\_degree}}
+\index{formula\_degree@{formula\_degree}!table@{table}}
+\doxysubsubsection{\texorpdfstring{formula\_degree()}{formula\_degree()}}
+{\footnotesize\ttfamily double table\+::formula\+\_\+degree (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})}
+
+Change the value of the cell 
+
+Definition at line 597 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a2e5a376f26645c8b1e7151ae8e1adaad}\label{classtable_a2e5a376f26645c8b1e7151ae8e1adaad}} 
+\index{table@{table}!init\_file@{init\_file}}
+\index{init\_file@{init\_file}!table@{table}}
+\doxysubsubsection{\texorpdfstring{init\_file()}{init\_file()}}
+{\footnotesize\ttfamily void table\+::init\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+Print the current content of the table,file,string 
+
+Definition at line 181 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a6c979e3e7a9324b39f176f6c50681c34}\label{classtable_a6c979e3e7a9324b39f176f6c50681c34}} 
+\index{table@{table}!init\_index@{init\_index}}
+\index{init\_index@{init\_index}!table@{table}}
+\doxysubsubsection{\texorpdfstring{init\_index()}{init\_index()}}
+{\footnotesize\ttfamily void table\+::init\+\_\+index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Save the changed content in file 
+
+Definition at line 199 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a440a5ba1d76f6fb07f7d6100600ce914}\label{classtable_a440a5ba1d76f6fb07f7d6100600ce914}} 
+\index{table@{table}!insert\_to@{insert\_to}}
+\index{insert\_to@{insert\_to}!table@{table}}
+\doxysubsubsection{\texorpdfstring{insert\_to()}{insert\_to()}}
+{\footnotesize\ttfamily void table\+::insert\+\_\+to (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Save the position of \textquotesingle{}$\vert$\textquotesingle{} and \textquotesingle{}~\newline
+\textquotesingle{} symbols in the string array Initialize save\+\_\+index\mbox{[}\mbox{]} array 
+
+Definition at line 224 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a6b2ae5a1029e14c3d6f6ed1cf22bf646}\label{classtable_a6b2ae5a1029e14c3d6f6ed1cf22bf646}} 
+\index{table@{table}!is\_digit@{is\_digit}}
+\index{is\_digit@{is\_digit}!table@{table}}
+\doxysubsubsection{\texorpdfstring{is\_digit()}{is\_digit()}}
+{\footnotesize\ttfamily bool table\+::is\+\_\+digit (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})}
+
+Change the cell\textquotesingle{}s value with formula 
+
+Definition at line 120 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_aa23acfd1866ac6650e0c3353bbd52cbd}\label{classtable_aa23acfd1866ac6650e0c3353bbd52cbd}} 
+\index{table@{table}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!table@{table}}
+\doxysubsubsection{\texorpdfstring{is\_valid()}{is\_valid()}}
+{\footnotesize\ttfamily void table\+::is\+\_\+valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Find the biggest amount of cells in a table\textquotesingle{}s line 
+
+Definition at line 389 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_aa6666bb1d464831573d7341aed6c9d36}\label{classtable_aa6666bb1d464831573d7341aed6c9d36}} 
+\index{table@{table}!line@{line}}
+\index{line@{line}!table@{table}}
+\doxysubsubsection{\texorpdfstring{line()}{line()}}
+{\footnotesize\ttfamily int table\+::line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return how many symbols \textquotesingle{}.\textquotesingle{} there are in the string\textquotesingle{}s content 
+
+Definition at line 335 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a1e5343ee0fc874564822923d2548b3a0}\label{classtable_a1e5343ee0fc874564822923d2548b3a0}} 
+\index{table@{table}!max\_len@{max\_len}}
+\index{max\_len@{max\_len}!table@{table}}
+\doxysubsubsection{\texorpdfstring{max\_len()}{max\_len()}}
+{\footnotesize\ttfamily void table\+::max\+\_\+len (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Return the number of cell\textquotesingle{}s position 
+
+Definition at line 169 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a974540609d16008cede77fa6570d2c6a}\label{classtable_a974540609d16008cede77fa6570d2c6a}} 
+\index{table@{table}!point@{point}}
+\index{point@{point}!table@{table}}
+\doxysubsubsection{\texorpdfstring{point()}{point()}}
+{\footnotesize\ttfamily int table\+::point (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+Take value of this cell 
+
+Definition at line 64 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a9a222c56821f53ae9cfe44049033a283}\label{classtable_a9a222c56821f53ae9cfe44049033a283}} 
+\index{table@{table}!position\_of\_cell@{position\_of\_cell}}
+\index{position\_of\_cell@{position\_of\_cell}!table@{table}}
+\doxysubsubsection{\texorpdfstring{position\_of\_cell()}{position\_of\_cell()}}
+{\footnotesize\ttfamily int table\+::position\+\_\+of\+\_\+cell (\begin{DoxyParamCaption}\item[{std\+::string}]{cell\+\_\+ind }\end{DoxyParamCaption})}
+
+The destructor of class table 
+
+Definition at line 34 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a87f6de0a6d05c8caf3090156e1ab3aab}\label{classtable_a87f6de0a6d05c8caf3090156e1ab3aab}} 
+\index{table@{table}!print@{print}}
+\index{print@{print}!table@{table}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void table\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 138 of file table.\+cpp.
+
+\mbox{\Hypertarget{classtable_a8af051416887ce28d1be8de98a429a56}\label{classtable_a8af051416887ce28d1be8de98a429a56}} 
+\index{table@{table}!save\_file@{save\_file}}
+\index{save\_file@{save\_file}!table@{table}}
+\doxysubsubsection{\texorpdfstring{save\_file()}{save\_file()}}
+{\footnotesize\ttfamily void table\+::save\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::fstream}]{new\+\_\+file,  }\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+This fragment initializes string \char`\"{}str\char`\"{} with the content of file 
+
+Definition at line 714 of file table.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtable_abe24b80ffe4ee8d937c92581e5b9e507}\label{classtable_abe24b80ffe4ee8d937c92581e5b9e507}} 
+\index{table@{table}!index@{index}}
+\index{index@{index}!table@{table}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily int$\ast$ table\+::index = (int$\ast$)(malloc(sizeof(int)))\hspace{0.3cm}{\ttfamily [private]}}
+
+Save content of file 
+
+Definition at line 21 of file table.\+h.
+
+\mbox{\Hypertarget{classtable_ad0d0a085668cb1bc3226a7d1dc655094}\label{classtable_ad0d0a085668cb1bc3226a7d1dc655094}} 
+\index{table@{table}!max\_rps@{max\_rps}}
+\index{max\_rps@{max\_rps}!table@{table}}
+\doxysubsubsection{\texorpdfstring{max\_rps}{max\_rps}}
+{\footnotesize\ttfamily int table\+::max\+\_\+rps = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 26 of file table.\+h.
+
+\mbox{\Hypertarget{classtable_a394c50cbceb44fa39434ba2b7fb4c987}\label{classtable_a394c50cbceb44fa39434ba2b7fb4c987}} 
+\index{table@{table}!max\_word@{max\_word}}
+\index{max\_word@{max\_word}!table@{table}}
+\doxysubsubsection{\texorpdfstring{max\_word}{max\_word}}
+{\footnotesize\ttfamily int table\+::max\+\_\+word = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 27 of file table.\+h.
+
+\mbox{\Hypertarget{classtable_af4f5301263efa135b04402327565ae3f}\label{classtable_af4f5301263efa135b04402327565ae3f}} 
+\index{table@{table}!size@{size}}
+\index{size@{size}!table@{table}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int table\+::size = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 25 of file table.\+h.
+
+\mbox{\Hypertarget{classtable_a9d777c0e0db5b57b9a929f05f44bfa71}\label{classtable_a9d777c0e0db5b57b9a929f05f44bfa71}} 
+\index{table@{table}!str@{str}}
+\index{str@{str}!table@{table}}
+\doxysubsubsection{\texorpdfstring{str}{str}}
+{\footnotesize\ttfamily std\+::string table\+::str\hspace{0.3cm}{\ttfamily [private]}}
+
+my\+\_\+class table
+
+These are private members of the class Table 
+
+Definition at line 17 of file table.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+P\+R\+O\+J\+E\+C\+T1/\mbox{\hyperlink{table_8h}{table.\+h}}\item 
+P\+R\+O\+J\+E\+C\+T1/\mbox{\hyperlink{table_8cpp}{table.\+cpp}}\end{DoxyCompactItemize}

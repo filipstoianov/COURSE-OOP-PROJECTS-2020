@@ -1,0 +1,8 @@
+Author:Steven King
+Title:Harry Potter 
+Genre:Fantasy
+Description:Interesting book
+Year:2010
+Key_words:fantasy,action
+Rating:10.10
+ISBN:100
